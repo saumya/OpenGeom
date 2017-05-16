@@ -3,6 +3,8 @@
 	
 	<meta title="OpenGeometry101" package="com.saumya.opengeometry101" version="1.0.0" company="Saumya Ray" />
 	<app main="Main" path="Export" file="OpenGeometry101" />
+
+	<window background="#000000" width="600" height="600" />
 	
 	<source path="Source" />
 	
