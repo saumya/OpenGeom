@@ -78,15 +78,22 @@ class Main extends Sprite {
 		// 1-circle
 		var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		addChild(circle1);
-		//circle1.x = stage.stageWidth/2;
+		circle1.x = stage.stageWidth/2;
 		//circle1.y = stage.stageHeight/2;
-		circle1.x = centerPoint.x - circleRadius/2;
+		//circle1.x = centerPoint.x - circleRadius/2;
 		circle1.y = centerPoint.y;
 		// 2-circle
 		var circle2:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		addChild(circle2);
 		circle2.x = circle1.x + circleRadius;
 		circle2.y = circle1.y;
+		// 3-circle
+		var circle3:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
+		addChild(circle3);
+		circle3.x = circle1.x + circleRadius * Math.cos(45);
+		circle3.y = circle1.y + circleRadius * Math.sin(-45);//on Top point
+		//circle3.y = circle1.y + circleRadius * Math.sin(45);//on Bottom point
+
 
 	}
 
