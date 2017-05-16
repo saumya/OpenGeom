@@ -101,8 +101,6 @@ class Main extends Sprite {
 		circle1 = new CircleWithOnlyBorder(circleRadius);
 		addChild(circle1);
 		circle1.x = centerPoint.x;
-		//circle1.y = stage.stageHeight/2;
-		//circle1.x = centerPoint.x - circleRadius/2;
 		circle1.y = centerPoint.y;
 		// 2-circle
 		//var circle2:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
