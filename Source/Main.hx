@@ -17,6 +17,8 @@ class Main extends Sprite {
 	//private var sprite:Sprite;
 	//private var circle1:CircleWithOnlyBorder;
 	private var envSprite:Sprite;
+
+	private var circleRadius:Int;
 	private var centerPoint:Point;
 	
 	public function new () {
@@ -37,6 +39,8 @@ class Main extends Sprite {
 		*/
 		speed = 0.3;
 		cacheTime = Lib.getTimer();
+
+		circleRadius = 100;
 
 		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
@@ -70,12 +74,20 @@ class Main extends Sprite {
 		envSprite.addChild(circle1);
 		circle1.x = circle1.y = stage.stageHeight/2;
 		*/
-		var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(100);
+
+		// 1-circle
+		var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		addChild(circle1);
 		//circle1.x = stage.stageWidth/2;
 		//circle1.y = stage.stageHeight/2;
-		circle1.x = centerPoint.x;
+		circle1.x = centerPoint.x - circleRadius/2;
 		circle1.y = centerPoint.y;
+		// 2-circle
+		var circle2:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
+		addChild(circle2);
+		circle2.x = circle1.x + circleRadius;
+		circle2.y = circle1.y;
+
 	}
 
 	private function update(deltaTime:Int):Void{
