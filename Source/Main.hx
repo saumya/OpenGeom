@@ -129,7 +129,7 @@ class Main extends Sprite {
 		// Movement-circle
 		//var cMove:CircleWithOnlyBorder = new CircleWithOnlyBorder(4);
 		cMove = new CircleWithOnlyBorder(4);
-		envSprite.addChild(cMove);
+		//envSprite.addChild(cMove);
 		//cMove.x = circle1.x + circleRadius * Math.cos(2);
 		//cMove.y = circle1.y + circleRadius * Math.sin(2);//on Top point
 		//cMove.y = circle1.y + circleRadius * Math.sin(45);//on Bottom point
