@@ -2,6 +2,7 @@ package;
 
 
 import openfl.display.Sprite;
+import openfl.display.Graphics;
 import openfl.events.Event;
 import openfl.Lib;
 
@@ -101,7 +102,25 @@ class Main extends Sprite {
 		envSprite.x = centerPoint.x;
 		envSprite.y = centerPoint.y;
 		addChild(envSprite);
+		/*
+		// ===================================
+		// Center Mark of the Creation
+		var cLength:Int = 1;
+		var gfxCS : Graphics = envSprite.graphics;
 		
+        gfxCS.clear();
+        gfxCS.lineStyle( 2, 0xAAAAAA );
+
+		gfxCS.lineTo(cLength,0);
+        gfxCS.moveTo(0,0);
+        gfxCS.lineTo(0,cLength);
+        gfxCS.moveTo(0,0);
+        gfxCS.lineTo( (-1*cLength),0);
+        gfxCS.moveTo(0,0);
+        gfxCS.lineTo(0,(-1*cLength));
+		// ===================================
+		*/
+
 		// 1-circle
 		circle1 = new CircleWithOnlyBorder(circleRadius);
 		envSprite.addChild(circle1);
@@ -119,19 +138,27 @@ class Main extends Sprite {
 		envSprite.addChild(cEyeOfVesicaPiscis);
 		
 		
-		/*
+		
 		// Co-ordinates got from hitTest
 		// 349.757104789173,386.742322559402
 		// 350.347067140206,213.598768351489
-		var p1 = new Point(349.757104789173,386.742322559402);
-		var p2 = new Point(350.347067140206,213.598768351489);
+		//var p1 = new Point(349.757104789173,386.742322559402);
+		//var p2 = new Point(350.347067140206,213.598768351489);
+		var p1 = new Point(0.622025723277773,86.2404227243339);
+		var p2 = new Point(0.347067140205596,-86.4012316485108);
 		//
 		// 3-circle
 		var circle3:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
-		addChild(circle3);
-		circle3.x = p2.x;
-		circle3.y = p2.y;
-		*/
+		envSprite.addChild(circle3);
+		circle3.x = p1.x;
+		circle3.y = p1.y;
+		// 4-circle
+		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
+		envSprite.addChild(circle4);
+		circle4.x = p2.x;
+		circle4.y = p2.y;
+		
+		
 
 		/*
 		// Movement-circle
@@ -139,12 +166,7 @@ class Main extends Sprite {
 		envSprite.addChild(cMove);
 		*/
 
-		/*
-		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius/2);
-		addChild(circle4);
-		circle4.x = centerPoint.x + circleRadius/2;
-		circle4.y = centerPoint.y;
-		*/
+		
 
 	}
 
