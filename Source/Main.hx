@@ -92,23 +92,18 @@ class Main extends Sprite {
 		addChild(envSprite);
 		
 		// 1-circle
-		//var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		circle1 = new CircleWithOnlyBorder(circleRadius);
-		//addChild(circle1);
-		//circle1.x = centerPoint.x;
-		//circle1.y = centerPoint.y;
-
 		envSprite.addChild(circle1);
 		//circle1.showCenter();
+		circle1.x = (circleRadius/2)*(-1);//moving left
 
-		/*
 		// 2-circle
 		//var circle2:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		circle2 = new CircleWithOnlyBorder(circleRadius);
-		addChild(circle2);
-		circle2.x = circle1.x + circleRadius;
-		circle2.y = circle1.y;
-
+		envSprite.addChild(circle2);
+		circle2.x = (circleRadius/2)*(1);//moving right
+		
+		/*
 		// Co-ordinates got from hitTest
 		// 349.757104789173,386.742322559402
 		// 350.347067140206,213.598768351489
