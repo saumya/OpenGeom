@@ -1,4 +1,9 @@
-package components;
+/**
+** Circle with a border
+** @version 1.0.0
+**/
+
+package components.circle;
 
 import openfl.display.Sprite;
 import openfl.display.Graphics;

@@ -7,7 +7,7 @@ import openfl.Lib;
 
 import openfl.geom.Point;
 
-import components.CircleWithOnlyBorder;
+import components.circle.CircleWithOnlyBorder;
 
 
 class Main extends Sprite {
