@@ -23,6 +23,8 @@ class Main extends Sprite {
 	
 	private var circle1:CircleWithOnlyBorder;
 	private var circle2:CircleWithOnlyBorder;
+	private var cEyeOfVesicaPiscis:CircleWithOnlyBorder;
+
 	private var cMove:CircleWithOnlyBorder;
 	private var counter:Float;
 	
@@ -36,7 +38,7 @@ class Main extends Sprite {
 		circleRadius = 100;
 		counter = 0;
 
-		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
+		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 	}
 
@@ -53,14 +55,14 @@ class Main extends Sprite {
 
 		var x2 = circle2.x + circleRadius * Math.cos(counter);
 		var y2 = circle2.y + circleRadius * Math.sin(counter);
-
+		
+		/*
+		// moving circle
 		cMove.x = x1;
 		cMove.y = y1;
-		
-		//trace('circle1.x,circle1.y',circle1.x,circle1.y);
-		//trace('x1,y1',x1,y1);
-		///trace('x2,y2',x2,y2);
+		*/
 
+		/*
 		var gX1 = envSprite.localToGlobal(new Point(x1,y1));
 
 		//trace('x1,y1',x1,y1);
@@ -75,7 +77,7 @@ class Main extends Sprite {
 			trace('x2,y2',x2,y2);
 			trace('=========== xxxxxxxxxxxx =============');
 		}
-
+		*/
 		
 		
 
@@ -111,6 +113,11 @@ class Main extends Sprite {
 		circle2 = new CircleWithOnlyBorder(circleRadius);
 		envSprite.addChild(circle2);
 		circle2.x = (circleRadius/2)*(1);//moving right
+
+		// Eye of VesicaPiscis
+		cEyeOfVesicaPiscis = new CircleWithOnlyBorder(circleRadius/2);
+		envSprite.addChild(cEyeOfVesicaPiscis);
+		
 		
 		/*
 		// Co-ordinates got from hitTest
@@ -126,14 +133,11 @@ class Main extends Sprite {
 		circle3.y = p2.y;
 		*/
 
+		/*
 		// Movement-circle
-		//var cMove:CircleWithOnlyBorder = new CircleWithOnlyBorder(4);
 		cMove = new CircleWithOnlyBorder(4);
-		//envSprite.addChild(cMove);
-		//cMove.x = circle1.x + circleRadius * Math.cos(2);
-		//cMove.y = circle1.y + circleRadius * Math.sin(2);//on Top point
-		//cMove.y = circle1.y + circleRadius * Math.sin(45);//on Bottom point
-		
+		envSprite.addChild(cMove);
+		*/
 
 		/*
 		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius/2);
