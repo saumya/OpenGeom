@@ -138,14 +138,12 @@ class Main extends Sprite {
 		//cEyeOfVesicaPiscis = new CircleWithOnlyBorder(circleRadius/2);
 		//envSprite.addChild(cEyeOfVesicaPiscis);
 		
-		
-		
 		// Co-ordinates got from hitTest
 		// 349.757104789173,386.742322559402
 		// 350.347067140206,213.598768351489
 		//var p1 = new Point(349.757104789173,386.742322559402);
 		//var p2 = new Point(350.347067140206,213.598768351489);
-		var p1 = new Point(0.622025723277773,86.2404227243339);
+		var p1 = new Point(0.622025723277773,86.2404227243339); // Center
 		var p2 = new Point(0.347067140205596,-86.4012316485108);
 		//
 		// 3-circle : Its going to be the center of the creation
@@ -153,6 +151,7 @@ class Main extends Sprite {
 		envSprite.addChild(circle3);
 		circle3.x = p1.x;
 		circle3.y = p1.y;
+		//circle3.showCenter();
 
 		/*
 		// 4-circle
