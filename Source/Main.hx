@@ -46,8 +46,8 @@ class Main extends Sprite {
 
 		cacheTime = currentTime;
 		
-		counter+=0.1;
-		/*
+		counter+=0.01;
+		
 		var x1 = circle1.x + circleRadius * Math.cos(counter);
 		var y1 = circle1.y + circleRadius * Math.sin(counter);
 
@@ -56,19 +56,28 @@ class Main extends Sprite {
 
 		cMove.x = x1;
 		cMove.y = y1;
-		*/
+		
+		//trace('circle1.x,circle1.y',circle1.x,circle1.y);
+		//trace('x1,y1',x1,y1);
+		///trace('x2,y2',x2,y2);
 
-		/*
+		var gX1 = envSprite.localToGlobal(new Point(x1,y1));
+
+		//trace('x1,y1',x1,y1);
+		//trace('gX1.x,gX1.y',gX1.x,gX1.y);
+		
 		//cMove.hitTestObject(circle2);
 		//if( cMove.hitTestObject(circle2) ){
-		if( circle2.hitTestPoint(x1,y1,true) ){
+		if( circle2.hitTestPoint(gX1.x,gX1.y,true) ){
 			trace('=======================================');
 			trace(counter);
 			trace('x1,y1',x1,y1);
 			trace('x2,y2',x2,y2);
 			trace('=========== xxxxxxxxxxxx =============');
 		}
-		*/
+
+		
+		
 
 		
 		
@@ -115,16 +124,16 @@ class Main extends Sprite {
 		addChild(circle3);
 		circle3.x = p2.x;
 		circle3.y = p2.y;
-		
+		*/
 
 		// Movement-circle
 		//var cMove:CircleWithOnlyBorder = new CircleWithOnlyBorder(4);
 		cMove = new CircleWithOnlyBorder(4);
-		addChild(cMove);
+		envSprite.addChild(cMove);
 		//cMove.x = circle1.x + circleRadius * Math.cos(2);
 		//cMove.y = circle1.y + circleRadius * Math.sin(2);//on Top point
 		//cMove.y = circle1.y + circleRadius * Math.sin(45);//on Bottom point
-		*/
+		
 
 		/*
 		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius/2);
