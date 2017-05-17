@@ -152,6 +152,8 @@ class Main extends Sprite {
 		circle3.x = p1.x;
 		circle3.y = p1.y;
 		//circle3.showCenter();
+		//circle2.showCenter();
+		//circle1.showCenter();
 
 		/*
 		// 4-circle
