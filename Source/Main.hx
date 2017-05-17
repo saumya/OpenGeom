@@ -99,6 +99,7 @@ class Main extends Sprite {
 		//circle1.y = centerPoint.y;
 
 		envSprite.addChild(circle1);
+		//circle1.showCenter();
 
 		/*
 		// 2-circle
