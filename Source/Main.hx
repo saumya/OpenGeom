@@ -14,8 +14,7 @@ class Main extends Sprite {
 	
 	private var cacheTime:Int;
 	private var speed:Float;
-	//private var sprite:Sprite;
-	//private var circle1:CircleWithOnlyBorder;
+
 	private var envSprite:Sprite;
 
 	private var circleRadius:Int;
@@ -48,7 +47,7 @@ class Main extends Sprite {
 		cacheTime = currentTime;
 		
 		counter+=0.1;
-
+		/*
 		var x1 = circle1.x + circleRadius * Math.cos(counter);
 		var y1 = circle1.y + circleRadius * Math.sin(counter);
 
@@ -57,6 +56,7 @@ class Main extends Sprite {
 
 		cMove.x = x1;
 		cMove.y = y1;
+		*/
 
 		/*
 		//cMove.hitTestObject(circle2);
@@ -81,27 +81,26 @@ class Main extends Sprite {
 	}
 
 	private function construct():Void{
-		/*
-		// drawing board
-		var size = 200;
+		
+		// environment
+		//var size = 200;
 		envSprite = new Sprite();
-		envSprite.graphics.beginFill(0x222222);
-		envSprite.graphics.drawRect(0,0,size*2,size*2);
-		envSprite.y = stage.stageHeight/2 - (size);
-		envSprite.x = stage.stageWidth/2 - (size);
+		//envSprite.graphics.beginFill(0x222222);
+		//envSprite.graphics.drawRect(0,0,size*2,size*2);
+		envSprite.x = centerPoint.x;
+		envSprite.y = centerPoint.y;
 		addChild(envSprite);
-		//
-		var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(50);
-		envSprite.addChild(circle1);
-		circle1.x = circle1.y = stage.stageHeight/2;
-		*/
-
+		
 		// 1-circle
 		//var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		circle1 = new CircleWithOnlyBorder(circleRadius);
-		addChild(circle1);
-		circle1.x = centerPoint.x;
-		circle1.y = centerPoint.y;
+		//addChild(circle1);
+		//circle1.x = centerPoint.x;
+		//circle1.y = centerPoint.y;
+
+		envSprite.addChild(circle1);
+
+		/*
 		// 2-circle
 		//var circle2:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
 		circle2 = new CircleWithOnlyBorder(circleRadius);
@@ -129,7 +128,8 @@ class Main extends Sprite {
 		//cMove.x = circle1.x + circleRadius * Math.cos(2);
 		//cMove.y = circle1.y + circleRadius * Math.sin(2);//on Top point
 		//cMove.y = circle1.y + circleRadius * Math.sin(45);//on Bottom point
-		
+		*/
+
 		/*
 		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius/2);
 		addChild(circle4);
