@@ -135,8 +135,8 @@ class Main extends Sprite {
 		circle2.x = (circleRadius/2)*(1);//moving right
 
 		// Eye of VesicaPiscis
-		//cEyeOfVesicaPiscis = new CircleWithOnlyBorder(circleRadius/2);
-		//envSprite.addChild(cEyeOfVesicaPiscis);
+		cEyeOfVesicaPiscis = new CircleWithOnlyBorder(circleRadius/2);
+		envSprite.addChild(cEyeOfVesicaPiscis);
 		
 		// Co-ordinates got from hitTest
 		// 349.757104789173,386.742322559402
