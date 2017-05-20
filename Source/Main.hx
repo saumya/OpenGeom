@@ -9,6 +9,7 @@ import openfl.Lib;
 import openfl.geom.Point;
 
 import components.circle.CircleWithOnlyBorder;
+import components.circle.CircleWithFill;
 
 
 class Main extends Sprite {
@@ -40,7 +41,7 @@ class Main extends Sprite {
 		circleRadius = 100;
 		counter = 0;
 
-		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
+		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 	}
 
@@ -51,13 +52,13 @@ class Main extends Sprite {
 		cacheTime = currentTime;
 		
 		counter+=0.01;
-		
+		/*
 		var x1 = circle1.x + circleRadius * Math.cos(counter);
 		var y1 = circle1.y + circleRadius * Math.sin(counter);
 
 		var x2 = circle2.x + circleRadius * Math.cos(counter);
 		var y2 = circle2.y + circleRadius * Math.sin(counter);
-		
+		*/
 		/*
 		// moving circle
 		cMove.x = x1;
@@ -80,6 +81,11 @@ class Main extends Sprite {
 			trace('=========== xxxxxxxxxxxx =============');
 		}
 		*/
+
+		circle1.update();
+		circle2.update();
+		circle3.update();
+		cEyeOfVesicaPiscis.update();
 		
 		
 
@@ -169,9 +175,10 @@ class Main extends Sprite {
 		cMove = new CircleWithOnlyBorder(4);
 		envSprite.addChild(cMove);
 		*/
-
-		
-
+		/*
+		var c:CircleWithFill = new CircleWithFill(2);
+		envSprite.addChild(c);
+		*/
 	}
 
 	private function update(deltaTime:Int):Void{
