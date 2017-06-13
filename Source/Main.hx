@@ -27,6 +27,7 @@ class Main extends Sprite {
 	private var circle2:CircleWithOnlyBorder;
 	private var cEyeOfVesicaPiscis:CircleWithOnlyBorder;
 	private var circle3:CircleWithOnlyBorder;
+	private var circle4:CircleWithOnlyBorder;
 
 	private var cMove:CircleWithOnlyBorder;
 	private var counter:Float;
@@ -85,6 +86,7 @@ class Main extends Sprite {
 		circle1.update();
 		circle2.update();
 		circle3.update();
+		circle4.update();
 		cEyeOfVesicaPiscis.update();
 		
 		
@@ -161,13 +163,13 @@ class Main extends Sprite {
 		//circle2.showCenter();
 		//circle1.showCenter();
 
-		/*
+		
 		// 4-circle
-		var circle4:CircleWithOnlyBorder = new CircleWithOnlyBorder(circleRadius);
+		circle4 = new CircleWithOnlyBorder(circleRadius);
 		envSprite.addChild(circle4);
 		circle4.x = p2.x;
 		circle4.y = p2.y;
-		*/
+		
 		
 
 		/*
