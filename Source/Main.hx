@@ -159,9 +159,7 @@ class Main extends Sprite {
 		envSprite.addChild(circle3);
 		circle3.x = p1.x;
 		circle3.y = p1.y;
-		//circle3.showCenter();
-		//circle2.showCenter();
-		//circle1.showCenter();
+		
 
 		
 		// 4-circle
@@ -169,6 +167,12 @@ class Main extends Sprite {
 		envSprite.addChild(circle4);
 		circle4.x = p2.x;
 		circle4.y = p2.y;
+
+		// Show the centers
+		circle4.showCenter();
+		circle3.showCenter();
+		circle2.showCenter();
+		circle1.showCenter();
 		
 		
 
