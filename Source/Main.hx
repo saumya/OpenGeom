@@ -83,12 +83,14 @@ class Main extends Sprite {
 		}
 		*/
 
+		/*
+		// No updates, no animations
 		circle1.update();
 		circle2.update();
 		circle3.update();
 		circle4.update();
 		cEyeOfVesicaPiscis.update();
-		
+		*/
 		
 
 		
