@@ -89,7 +89,7 @@ class Main extends Sprite {
 		circle2.update();
 		circle3.update();
 		circle4.update();
-		cEyeOfVesicaPiscis.update();
+		//cEyeOfVesicaPiscis.update();
 		
 		
 
