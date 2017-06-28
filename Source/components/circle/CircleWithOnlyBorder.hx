@@ -28,12 +28,12 @@ class CircleWithOnlyBorder extends Sprite {
 
     public function construct():Void{
         //
-        revolvingCircle = new CircleWithFill(5);
+        revolvingCircle = new CircleWithFill(2);
         addChild(revolvingCircle);
         //
         var gfx : Graphics = this.graphics;
         gfx.clear();
-        gfx.lineStyle( 2, 0xAAAAAA );
+        gfx.lineStyle( 1, 0xAAAAAA );
         //center align
         //gfx.drawCircle(radiusOfCircle/2,radiusOfCircle/2,radiusOfCircle);
         //left align
