@@ -11,6 +11,7 @@ import openfl.geom.Point;
 import components.circle.CircleWithOnlyBorder;
 import components.circle.CircleWithFill;
 
+// Entry app
 class Nine extends Sprite {
 	public function new() {
 		super();
@@ -18,8 +19,10 @@ class Nine extends Sprite {
 	}
 }
 
-
+// actual app
 class NineApp extends Sprite {
+
+	private var enterFrameCounter:Int;
 	
 	public function new () {
 		
@@ -56,6 +59,11 @@ class NineApp extends Sprite {
 		*/
 
 		//circle3.y = circle1.y + circleRadius * Math.sin(speed * deltaTime);
+
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(90);
+		this.addChild(c2);
+		c2.x = this.stage.stageWidth/2;
+		c2.y = this.stage.stageHeight/2;
 		
 	}
 	
