@@ -22,11 +22,14 @@ class Nine extends Sprite {
 // actual app
 class NineApp extends Sprite {
 
+	private var cacheTime:Int;
 	private var enterFrameCounter:Int;
 	
 	public function new () {
-		
 		super ();
+
+		this.enterFrameCounter = 0;
+		this.cacheTime = 0;
 		
 		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
@@ -34,9 +37,10 @@ class NineApp extends Sprite {
 
 	private function this_onEnterFrame(event:Event):Void{
 		var currentTime = Lib.getTimer();
-		//update(currentTime-cacheTime);
-		//cacheTime = currentTime;
-		//counter+=0.01;
+		update(currentTime-cacheTime);
+		
+		cacheTime = currentTime;
+		this.enterFrameCounter ++;
 	}
 
 	private function this_onAddedToStage(e:Event):Void{
@@ -60,10 +64,12 @@ class NineApp extends Sprite {
 
 		//circle3.y = circle1.y + circleRadius * Math.sin(speed * deltaTime);
 
-		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(90);
+
+
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(90/2*deltaTime);
 		this.addChild(c2);
-		c2.x = this.stage.stageWidth/2;
-		c2.y = this.stage.stageHeight/2;
+		c2.x = this.stage.stageWidth/2 + (90/2*deltaTime);
+		c2.y = this.stage.stageHeight/2 + (90/2*deltaTime);
 		
 	}
 	
