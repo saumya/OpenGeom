@@ -31,7 +31,7 @@ class NineApp extends Sprite {
 		this.enterFrameCounter = 0;
 		this.cacheTime = 0;
 		
-		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
+		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 	}
 
@@ -46,7 +46,8 @@ class NineApp extends Sprite {
 	private function this_onAddedToStage(e:Event):Void{
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 		//centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
-		construct();
+		//construct();
+		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 	}
 
 	private function construct():Void{
@@ -66,12 +67,13 @@ class NineApp extends Sprite {
 
 		//trace('deltaTime:'+deltaTime);
 
-		var num = (90/2*(deltaTime+1));
+		//var num = (90/2*(deltaTime+1));
 		//trace('num:'+num);
+
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(deltaTime);
 		this.addChild(c2);
-		c2.x = this.stage.stageWidth/2 ;
-		c2.y = this.stage.stageHeight/2 ;
+		c2.x = (this.stage.stageWidth/2)+(deltaTime) ;
+		c2.y = (this.stage.stageHeight/2)+(deltaTime) ;
 		
 	}
 	
