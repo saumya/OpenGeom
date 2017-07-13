@@ -64,12 +64,14 @@ class NineApp extends Sprite {
 
 		//circle3.y = circle1.y + circleRadius * Math.sin(speed * deltaTime);
 
+		//trace('deltaTime:'+deltaTime);
 
-
-		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(90/2*deltaTime);
+		var num = (90/2*(deltaTime+1));
+		//trace('num:'+num);
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(deltaTime);
 		this.addChild(c2);
-		c2.x = this.stage.stageWidth/2 + (90/2*deltaTime);
-		c2.y = this.stage.stageHeight/2 + (90/2*deltaTime);
+		c2.x = this.stage.stageWidth/2 ;
+		c2.y = this.stage.stageHeight/2 ;
 		
 	}
 	
