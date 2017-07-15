@@ -2,11 +2,10 @@ Geometry and Maths
 ==================
 An OpenFL experiments with Geometry coding.
  
- - Point
- - Single Circle
- - Double Circle
+```
+Point > Single Circle > Double Circle >
+```
  
- - And then the game begins
 
 Geometry and beginning. From point to circle and beyound.
 
