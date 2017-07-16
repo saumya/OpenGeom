@@ -70,7 +70,11 @@ class NineApp extends Sprite {
 		//var num = (90/2*(deltaTime+1));
 		//trace('num:'+num);
 
-		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(deltaTime);
+		//pattern:1
+		//var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(deltaTime);
+		//pattern:2
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(enterFrameCounter);
+		//
 		this.addChild(c2);
 		c2.x = (this.stage.stageWidth/2)+enterFrameCounter*Math.sin(enterFrameCounter) ;
 		c2.y = (this.stage.stageHeight/2)+enterFrameCounter*Math.cos(enterFrameCounter) ;
