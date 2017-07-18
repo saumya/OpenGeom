@@ -84,9 +84,17 @@ class NineApp extends Sprite {
 		//pattern:1
 		//var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(deltaTime);
 		//pattern:2
-		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(enterFrameCounter);
+		//var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(enterFrameCounter);
 		//pattern:3
 		//var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(20);
+		/*
+		//pattern:4
+		var r = 12 + 9 * Math.sin(enterFrameCounter);
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(r);
+		*/
+		//pattern:5
+		var r = 12 + 9 * Math.sin(Math.random()*enterFrameCounter);
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(r);
 		//
 		this.addChild(c2);
 		c2.x = (this.stage.stageWidth/2)+enterFrameCounter*Math.sin(enterFrameCounter) ;
