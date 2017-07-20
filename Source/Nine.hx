@@ -92,6 +92,7 @@ class NineApp extends Sprite {
 		var r = 12 + 9 * Math.sin(enterFrameCounter);
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(r);
 		*/
+		/*
 		//pattern:5
 		var r = 12 + 9 * Math.sin(Math.random()*enterFrameCounter);
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(r);
@@ -99,9 +100,37 @@ class NineApp extends Sprite {
 		this.addChild(c2);
 		c2.x = (this.stage.stageWidth/2)+enterFrameCounter*Math.sin(enterFrameCounter) ;
 		c2.y = (this.stage.stageHeight/2)+enterFrameCounter*Math.cos(enterFrameCounter) ;
-
-		this.enterFrameCounter ++;
+		*/
+		/*
+		//pattern:6
+		var r = deltaTime;
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(30);
+		this.addChild(c2);
+		c2.x = (this.stage.stageWidth/2) + enterFrameCounter * Math.sin (enterFrameCounter) ;
+		c2.y = (this.stage.stageHeight/2) + enterFrameCounter * Math.cos (enterFrameCounter) ;
+		*/
 		
+		//pattern:7
+		var r = deltaTime;
+		var radius = 20 * Math.sin(enterFrameCounter);
+		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(radius);
+		this.addChild(c2);
+		
+		//var randomNum = (100*Math.random());
+		var xPos = (enterFrameCounter/2)*Math.sin(enterFrameCounter);
+		var yPos = (enterFrameCounter/2)*Math.cos(enterFrameCounter);
+		if (enterFrameCounter%3 == 0) {
+			xPos = (-1)*xPos;
+			yPos = (-1)*yPos;
+		}
+		
+
+		c2.x = (this.stage.stageWidth/2)+ xPos ;
+		c2.y = (this.stage.stageHeight/2)+ yPos ;
+
+
+		//
+		this.enterFrameCounter ++;
 	}
 	
 	
