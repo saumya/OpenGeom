@@ -129,7 +129,7 @@ class NineApp extends Sprite {
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
 		*/
 
-		
+		/*
 		//pattern:8
 		var r = deltaTime;
 		var radius = 60 + (20 * Math.sin(enterFrameCounter));
@@ -146,9 +146,9 @@ class NineApp extends Sprite {
 		
 		c2.x = (this.stage.stageWidth/2)+ xPos ;
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
-		
+		*/
 
-		/*
+		
 		//pattern:9
 		var r = deltaTime;
 		var radius = 60 + (20 * Math.sin(enterFrameCounter));
@@ -165,7 +165,7 @@ class NineApp extends Sprite {
 		
 		c2.x = (this.stage.stageWidth/2)+ xPos ;
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
-		*/
+		
 
 
 		//
