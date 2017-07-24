@@ -27,6 +27,9 @@ class NineApp extends Sprite {
 	private var enterFrameCounter:Int;
 
 	private var isPlaying:Bool;
+
+	//
+	private var lastCircleRadius:Float;
 	
 	public function new () {
 		super ();
@@ -34,6 +37,8 @@ class NineApp extends Sprite {
 		this.enterFrameCounter = 0;
 		this.cacheTime = 0;
 		this.isPlaying = true;
+
+		this.lastCircleRadius = 0;
 		
 		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		addEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
@@ -168,11 +173,31 @@ class NineApp extends Sprite {
 		*/
 
 		//pattern : 10
-		var r = deltaTime;
-		var radius = 10 + (20 * Math.sin(enterFrameCounter));
+		var r:Float = deltaTime;
+		var radius:Float = 20;
+		var xPos:Float = 0;
+		var yPos:Float = 0;
+
+		//var radius = 10 + (200 * Math.sin(enterFrameCounter));
+		if (this.lastCircleRadius<=0) {
+			//radius = 10 + (200 * Math.sin(enterFrameCounter));
+			//radius = 1000;
+
+		}else{
+			//radius = this.lastCircleRadius / 2 ;
+			var d = (this.lastCircleRadius / 2)*enterFrameCounter;
+			xPos = d*Math.sin(enterFrameCounter) / 100 ;
+			yPos = d*Math.cos(enterFrameCounter) / 100 ;
+		}
+
+		this.lastCircleRadius = radius;
+		
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(radius);
 		this.addChild(c2);
+
 		
+		
+		/*
 		//var randomNum = (100*Math.random());
 		var xPos = (enterFrameCounter/2)*Math.sin(enterFrameCounter);
 		var yPos = (enterFrameCounter/2)*Math.cos(enterFrameCounter);
@@ -180,7 +205,8 @@ class NineApp extends Sprite {
 			xPos = (-1)*xPos;
 			yPos = (-1)*yPos;
 		}
-		
+		*/
+
 		c2.x = (this.stage.stageWidth/2)+ xPos ;
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
 
