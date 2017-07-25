@@ -177,7 +177,7 @@ class NineApp extends Sprite {
 		var radius:Float = 20;
 		var xPos:Float = 0;
 		var yPos:Float = 0;
-
+		/*
 		//var radius = 10 + (200 * Math.sin(enterFrameCounter));
 		if (this.lastCircleRadius<=0) {
 			//radius = 10 + (200 * Math.sin(enterFrameCounter));
@@ -185,12 +185,29 @@ class NineApp extends Sprite {
 
 		}else{
 			//radius = this.lastCircleRadius / 2 ;
+			//radius = 10 + (200 * Math.sin(this.lastCircleRadius));
+			//
 			var d = (this.lastCircleRadius / 2)*enterFrameCounter;
+			//
 			xPos = d*Math.sin(enterFrameCounter) / 100 ;
 			yPos = d*Math.cos(enterFrameCounter) / 100 ;
 		}
+		*/
+		var d = (10)*enterFrameCounter;
+		var e = 1 * enterFrameCounter;
+		
+		xPos = d*Math.sin(enterFrameCounter) / 100 ;
+		yPos = d*Math.cos(enterFrameCounter) / 100 ;
 
-		this.lastCircleRadius = radius;
+		radius = 10 + 50*Math.sin(e);
+		if(radius <= 0){
+			//radius = 10 + 20*Math.cos(e);
+			radius = (-1)*(radius);
+		}
+		//trace('radius='+radius);
+
+
+		//this.lastCircleRadius = radius;
 		
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(radius);
 		this.addChild(c2);
