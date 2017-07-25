@@ -28,10 +28,9 @@ class CircleWithOnlyBorder extends Sprite {
 
     public function construct():Void{
         //
-        /*
+        // centre mark
         revolvingCircle = new CircleWithFill(2);
         addChild(revolvingCircle);
-        */
         //
         var gfx : Graphics = this.graphics;
         gfx.clear();
