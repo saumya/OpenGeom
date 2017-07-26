@@ -174,7 +174,7 @@ class NineApp extends Sprite {
 
 		//pattern : 10
 		var r:Float = deltaTime;
-		var radius:Float = 20;
+		var radius:Float = 10;
 		var xPos:Float = 0;
 		var yPos:Float = 0;
 		/*
@@ -198,7 +198,7 @@ class NineApp extends Sprite {
 
 		var xx:Float = 1;
 		var yy:Float = 1;
-		if(enterFrameCounter%3 == 0){
+		if(enterFrameCounter%4 == 0){
 			xx = Math.sin(enterFrameCounter);
 			yy = Math.cos(enterFrameCounter);
 		}else{
