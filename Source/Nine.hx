@@ -195,17 +195,28 @@ class NineApp extends Sprite {
 		*/
 		var d = (10)*enterFrameCounter;
 		var e = 1 * enterFrameCounter;
-		
-		xPos = d*Math.sin(enterFrameCounter) / 100 ;
-		yPos = d*Math.cos(enterFrameCounter) / 100 ;
 
+		var xx:Float = 1;
+		var yy:Float = 1;
+		if(enterFrameCounter%3 == 0){
+			xx = Math.sin(enterFrameCounter);
+			yy = Math.cos(enterFrameCounter);
+		}else{
+			xx = Math.cos(enterFrameCounter);
+			yy = Math.sin(enterFrameCounter);
+		}
+		
+		xPos = d * xx / 20 ;
+		yPos = d * yy / 20 ;
+
+		/*
 		radius = 10 + 50*Math.sin(e);
 		if(radius <= 0){
 			//radius = 10 + 20*Math.cos(e);
 			radius = (-1)*(radius);
 		}
 		//trace('radius='+radius);
-
+		*/
 
 		//this.lastCircleRadius = radius;
 		
