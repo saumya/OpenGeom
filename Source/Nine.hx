@@ -198,7 +198,7 @@ class NineApp extends Sprite {
 
 		var xx:Float = 1;
 		var yy:Float = 1;
-		if(enterFrameCounter%4 == 0){
+		if(enterFrameCounter%5 == 0){
 			xx = Math.sin(enterFrameCounter);
 			yy = Math.cos(enterFrameCounter);
 		}else{
@@ -206,8 +206,8 @@ class NineApp extends Sprite {
 			yy = Math.sin(enterFrameCounter);
 		}
 		
-		xPos = d * xx / 20 ;
-		yPos = d * yy / 20 ;
+		xPos = d * xx / 40 ;
+		yPos = d * yy / 40 ;
 
 		/*
 		radius = 10 + 50*Math.sin(e);
