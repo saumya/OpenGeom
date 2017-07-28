@@ -12,6 +12,8 @@ import openfl.geom.Point;
 import components.circle.CircleWithOnlyBorder;
 import components.circle.CircleWithFill;
 
+import components.shape.Shape1;
+
 // Entry app
 class Nine extends Sprite {
 	public function new() {
@@ -57,11 +59,11 @@ class NineApp extends Sprite {
 	private function this_onAddedToStage(e:Event):Void{
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 		//centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
-		construct();
-		/*
+		//construct();
+		
 		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		this.stage.addEventListener(MouseEvent.CLICK,onStageClick);
-		*/
+		
 	}
 
 	private function construct():Void{
@@ -70,19 +72,32 @@ class NineApp extends Sprite {
 		this.addChild(circle1);
 		circle1.x = this.stage.stageWidth/2;
 		circle1.y = this.stage.stageHeight/2;
-		*/
+		
 		var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
-		var g:Graphics = this.graphics;
-		g.lineStyle(2,0xFF0000);
-		g.moveTo(centerPoint.x,centerPoint.y);
-		/*
-		g.lineTo(centerPoint.x+50,centerPoint.y-100);
-		g.lineTo(centerPoint.x+0,centerPoint.y-200);
-		g.curveTo(centerPoint.x+100,centerPoint.y-300,0,0);
 		*/
-		g.curveTo(centerPoint.x+200,centerPoint.y-100,0,0);
+		/*
+		var g:Graphics = this.graphics;
+		//g.beginFill(0xAAAAAA);
+		
+		g.lineStyle(4,0xFFFFFF);
+		g.moveTo(centerPoint.x,centerPoint.y);
+		
+		//g.lineTo(centerPoint.x+50,centerPoint.y-100);
+		//g.lineTo(centerPoint.x+0,centerPoint.y-200);
+		//g.curveTo(centerPoint.x+100,centerPoint.y-300,0,0);
+		
+		g.curveTo(centerPoint.x+100,centerPoint.y-50,centerPoint.x,centerPoint.y-200);
 		//g.moveTo(centerPoint.x+200,centerPoint.y-100);
-		g.curveTo(centerPoint.x,centerPoint.y,0,0);
+		g.curveTo(centerPoint.x-100,centerPoint.y-50,centerPoint.x,centerPoint.y);
+		*/
+		/*
+		var s1:Shape1 = new Shape1();
+		this.addChild(s1);
+		//s1.x = centerPoint.x;
+		//s1.y = centerPoint.y;
+		s1.setPosition(centerPoint);
+		s1.rotation = 45;
+		*/
 	}
 
 	private function onStageClick(e:MouseEvent):Void{
@@ -193,28 +208,16 @@ class NineApp extends Sprite {
 		var radius:Float = 10;
 		var xPos:Float = 0;
 		var yPos:Float = 0;
-		/*
-		//var radius = 10 + (200 * Math.sin(enterFrameCounter));
-		if (this.lastCircleRadius<=0) {
-			//radius = 10 + (200 * Math.sin(enterFrameCounter));
-			//radius = 1000;
 
-		}else{
-			//radius = this.lastCircleRadius / 2 ;
-			//radius = 10 + (200 * Math.sin(this.lastCircleRadius));
-			//
-			var d = (this.lastCircleRadius / 2)*enterFrameCounter;
-			//
-			xPos = d*Math.sin(enterFrameCounter) / 100 ;
-			yPos = d*Math.cos(enterFrameCounter) / 100 ;
-		}
-		*/
+		
 		var d = (10)*enterFrameCounter;
 		var e = 1 * enterFrameCounter;
 
+		
 		var xx:Float = 1;
 		var yy:Float = 1;
-		if(enterFrameCounter%5 == 0){
+		/*
+		if(enterFrameCounter%2 == 0){
 			xx = Math.sin(enterFrameCounter);
 			yy = Math.cos(enterFrameCounter);
 		}else{
@@ -224,36 +227,31 @@ class NineApp extends Sprite {
 		
 		xPos = d * xx / 40 ;
 		yPos = d * yy / 40 ;
-
-		/*
-		radius = 10 + 50*Math.sin(e);
-		if(radius <= 0){
-			//radius = 10 + 20*Math.cos(e);
-			radius = (-1)*(radius);
-		}
-		//trace('radius='+radius);
-		*/
-
+		
 		//this.lastCircleRadius = radius;
 		
 		var c2:CircleWithOnlyBorder = new CircleWithOnlyBorder(radius);
 		this.addChild(c2);
 
-		
-		
-		/*
-		//var randomNum = (100*Math.random());
-		var xPos = (enterFrameCounter/2)*Math.sin(enterFrameCounter);
-		var yPos = (enterFrameCounter/2)*Math.cos(enterFrameCounter);
-		if (enterFrameCounter%2 == 0) {
-			xPos = (-1)*xPos;
-			yPos = (-1)*yPos;
-		}
-		*/
-
 		c2.x = (this.stage.stageWidth/2)+ xPos ;
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
+		*/
 
+		var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
+		
+		xx = Math.sin(enterFrameCounter);
+		yy = Math.cos(enterFrameCounter);
+		xPos =  xx * 100 ;
+		yPos =  yy * 100 ;
+
+		var s1:Shape1 = new Shape1();
+		//s1.setPosition(centerPoint);
+		s1.scaleX = s1.scaleY = Math.sin(enterFrameCounter);
+		this.addChild(s1);
+
+		s1.x = centerPoint.x ;
+		s1.y = centerPoint.y ;
+		s1.rotation = enterFrameCounter;
 
 		//
 		this.enterFrameCounter ++;
