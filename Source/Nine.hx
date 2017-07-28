@@ -57,16 +57,32 @@ class NineApp extends Sprite {
 	private function this_onAddedToStage(e:Event):Void{
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 		//centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
-		//construct();
+		construct();
+		/*
 		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		this.stage.addEventListener(MouseEvent.CLICK,onStageClick);
+		*/
 	}
 
 	private function construct():Void{
+		/*
 		var circle1:CircleWithOnlyBorder = new CircleWithOnlyBorder(90);
 		this.addChild(circle1);
 		circle1.x = this.stage.stageWidth/2;
 		circle1.y = this.stage.stageHeight/2;
+		*/
+		var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
+		var g:Graphics = this.graphics;
+		g.lineStyle(2,0xFF0000);
+		g.moveTo(centerPoint.x,centerPoint.y);
+		/*
+		g.lineTo(centerPoint.x+50,centerPoint.y-100);
+		g.lineTo(centerPoint.x+0,centerPoint.y-200);
+		g.curveTo(centerPoint.x+100,centerPoint.y-300,0,0);
+		*/
+		g.curveTo(centerPoint.x+200,centerPoint.y-100,0,0);
+		//g.moveTo(centerPoint.x+200,centerPoint.y-100);
+		g.curveTo(centerPoint.x,centerPoint.y,0,0);
 	}
 
 	private function onStageClick(e:MouseEvent):Void{
