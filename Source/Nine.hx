@@ -14,6 +14,8 @@ import components.circle.CircleWithFill;
 
 import components.shape.Shape1;
 
+import util.PatternFactory;
+
 // Entry app
 class Nine extends Sprite {
 	public function new() {
@@ -32,6 +34,8 @@ class NineApp extends Sprite {
 
 	//
 	private var lastCircleRadius:Float;
+	//
+	private var pFactory:PatternFactory;
 	
 	public function new () {
 		super ();
@@ -58,7 +62,10 @@ class NineApp extends Sprite {
 
 	private function this_onAddedToStage(e:Event):Void{
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
-		//centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
+
+		centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
+		this.pFactory = new PatternFactory(this,centerPoint);
+
 		//construct();
 		
 		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
