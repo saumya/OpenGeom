@@ -63,7 +63,7 @@ class NineApp extends Sprite {
 	private function this_onAddedToStage(e:Event):Void{
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 
-		centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
+		var centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
 		this.pFactory = new PatternFactory(this,centerPoint);
 
 		//construct();
@@ -246,19 +246,46 @@ class NineApp extends Sprite {
 
 		var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
 		
+		/*
 		xx = Math.sin(enterFrameCounter);
 		yy = Math.cos(enterFrameCounter);
 		xPos =  xx * 100 ;
 		yPos =  yy * 100 ;
+		*/
 
-		var s1:Shape1 = new Shape1();
-		//s1.setPosition(centerPoint);
-		s1.scaleX = s1.scaleY = Math.sin(enterFrameCounter);
-		this.addChild(s1);
+		//if (enterFrameCounter<=360) {
+			if (enterFrameCounter % 10 == 0) {
+				/*
+				var s1:Shape1 = new Shape1();
+				//s1.setPosition(centerPoint);
+				//s1.scaleX = s1.scaleY = Math.sin(enterFrameCounter);
+				s1.scaleX = s1.scaleY = 0.4;
+				this.addChild(s1);
 
-		s1.x = centerPoint.x ;
-		s1.y = centerPoint.y ;
-		s1.rotation = enterFrameCounter;
+				s1.x = centerPoint.x ;
+				s1.y = centerPoint.y ;
+				s1.rotation = enterFrameCounter;
+				*/
+				if(enterFrameCounter % 22.5 == 0){
+					var s1:Shape1 = new Shape1();
+					s1.scaleX = s1.scaleY = 0.6;
+					this.addChild(s1);
+					s1.x = centerPoint.x ;
+					s1.y = centerPoint.y ;
+					s1.rotation = enterFrameCounter;
+				}
+				if(enterFrameCounter % 60 == 0){
+					var s1:Shape1 = new Shape1();
+					s1.scaleX = s1.scaleY = 0.8;
+					this.addChild(s1);
+					s1.x = centerPoint.x ;
+					s1.y = centerPoint.y ;
+					s1.rotation = enterFrameCounter;
+				}
+			} 
+			//
+		//}
+		
 
 		//
 		this.enterFrameCounter ++;
