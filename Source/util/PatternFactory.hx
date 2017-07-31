@@ -23,7 +23,26 @@ class PatternFactory {
 		return sBoard;
 	}
 	public function drawPattern(s:Sprite):Void{
-		var s1:Shape1 = new Shape1();
-		sBoard.addChild(s1);
+		sBoard.addChild( getPetalPattern(4) );		
+	}
+	// n Petals
+	public function getPetalPattern(petals:Int=2):Sprite{
+		
+		var s:Sprite = new Sprite();
+		var r:Float = 0;
+
+		var devideBy:Float = 360/petals;
+
+		for (i in 0 ... 360) {
+			var s1:Shape1 = new Shape1();
+			if (i%devideBy==0) {
+				s1.x = r * Math.cos(i);
+				s1.y = r * Math.sin(i);
+				s1.rotation = i;
+				s.addChild(s1);
+			}
+		}
+
+		return s;
 	}
 }

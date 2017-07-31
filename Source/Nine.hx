@@ -77,7 +77,7 @@ class NineApp extends Sprite {
 
 		construct();
 		
-		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
+		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		this.stage.addEventListener(MouseEvent.CLICK,onStageClick);
 		
 	}
@@ -115,9 +115,11 @@ class NineApp extends Sprite {
 		s1.rotation = 45;
 		*/
 
-		pFactory.drawPattern(this.dContainer);
-		var s:Sprite = pFactory.getPattern();
-		addChild(s);
+		//pFactory.drawPattern(this.dContainer);
+		/*
+		var s:Sprite = pFactory.getPetalPattern(2);
+		this.dContainer.addChild(s);
+		*/
 	}
 
 	private function onStageClick(e:MouseEvent):Void{
@@ -237,6 +239,30 @@ class NineApp extends Sprite {
 		var xx:Float = 1;
 		var yy:Float = 1;
 		/*
+		if (enterFrameCounter % 15 == 0) {
+			var s:Sprite = pFactory.getPetalPattern(2);
+			s.scaleX = s.scaleY = 0.5;
+			s.rotation = enterFrameCounter;
+			dContainer.addChild(s);
+		}
+		*/
+		
+		if (enterFrameCounter % 45 == 0) {
+			var s:Sprite = pFactory.getPetalPattern(6);
+			s.scaleX = s.scaleY = 0.75;
+			s.rotation = enterFrameCounter;
+			dContainer.addChild(s);
+		}
+		
+		if (enterFrameCounter % 90 == 0) {
+			var s:Sprite = pFactory.getPetalPattern(8);
+			s.scaleX = s.scaleY = 1.0;
+			s.rotation = enterFrameCounter;
+			dContainer.addChild(s);
+		}
+		
+
+		/*
 		if(enterFrameCounter%2 == 0){
 			xx = Math.sin(enterFrameCounter);
 			yy = Math.cos(enterFrameCounter);
@@ -257,7 +283,7 @@ class NineApp extends Sprite {
 		c2.y = (this.stage.stageHeight/2)+ yPos ;
 		*/
 
-		var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
+		//var centerPoint:Point = new Point(this.stage.stageWidth/2,this.stage.stageHeight/2);
 		
 		/*
 		xx = Math.sin(enterFrameCounter);
@@ -266,6 +292,7 @@ class NineApp extends Sprite {
 		yPos =  yy * 100 ;
 		*/
 
+		/*
 		var s1:Shape1 = new Shape1();
 		//var s1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//s1.scaleX = s1.scaleY = 0.6;
@@ -279,6 +306,7 @@ class NineApp extends Sprite {
 			s1.y = (-1) * 1 * ( Math.cos( enterFrameCounter ) ) ;
 			s1.rotation = enterFrameCounter;
 		}
+		*/
 
 		
 
