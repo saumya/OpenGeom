@@ -269,9 +269,9 @@ class NineApp extends Sprite {
 
 		//trace(enterFrameCounter+': deltaTime='+deltaTime);
 
-		s1.x = 50*( Math.cos(50) ) ;
-		s1.y = 50*( Math.sin(50) ) ;
-		s1.rotation = 50;
+		s1.x = 30 * ( Math.sin( enterFrameCounter ) ) ;
+		s1.y = (-1) * 30 * ( Math.cos( enterFrameCounter ) ) ;
+		s1.rotation = enterFrameCounter;
 
 		//if (enterFrameCounter<=360) {
 			//if (enterFrameCounter % 10 == 0) {
