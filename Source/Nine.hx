@@ -13,6 +13,7 @@ import components.circle.CircleWithOnlyBorder;
 import components.circle.CircleWithFill;
 
 import components.shape.Shape1;
+import components.OGSprite;
 
 import util.PatternFactory;
 
@@ -35,6 +36,7 @@ class NineApp extends Sprite {
 	//
 	private var lastCircleRadius:Float;
 	//
+	private var dContainer:OGSprite;
 	private var pFactory:PatternFactory;
 	
 	public function new () {
@@ -64,7 +66,14 @@ class NineApp extends Sprite {
 		removeEventListener(Event.ADDED_TO_STAGE,this_onAddedToStage);
 
 		var centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
-		this.pFactory = new PatternFactory(this,centerPoint);
+		
+		this.dContainer = new OGSprite();
+		this.dContainer.drawCenter();
+		this.dContainer.x = centerPoint.x;
+		this.dContainer.y = centerPoint.y;
+		addChild(dContainer);
+		
+		this.pFactory = new PatternFactory(this.dContainer,centerPoint);
 
 		//construct();
 		
@@ -253,42 +262,58 @@ class NineApp extends Sprite {
 		yPos =  yy * 100 ;
 		*/
 
+		var s1:Shape1 = new Shape1();
+		//var s1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
+		//s1.scaleX = s1.scaleY = 0.6;
+		this.dContainer.addChild(s1);
+
+		//trace(enterFrameCounter+': deltaTime='+deltaTime);
+
+		s1.x = 50*( Math.cos(50) ) ;
+		s1.y = 50*( Math.sin(50) ) ;
+		s1.rotation = 50;
+
 		//if (enterFrameCounter<=360) {
-			if (enterFrameCounter % 10 == 0) {
+			//if (enterFrameCounter % 10 == 0) {
 				/*
 				var s1:Shape1 = new Shape1();
 				//s1.setPosition(centerPoint);
 				//s1.scaleX = s1.scaleY = Math.sin(enterFrameCounter);
 				s1.scaleX = s1.scaleY = 0.4;
-				this.addChild(s1);
+				this.dContainer.addChild(s1);
 
+				s1.x = 100*( Math.cos(enterFrameCounter) ) ;
+				s1.y = 100*( Math.sin(enterFrameCounter) ) ;
+				//s1.rotation = enterFrameCounter;
+				*/
+
+				/*
+				xx = Math.sin(enterFrameCounter);
+				yy = Math.cos(enterFrameCounter);
+				
+				var s1:Shape1 = new Shape1();
 				s1.x = centerPoint.x ;
 				s1.y = centerPoint.y ;
 				s1.rotation = enterFrameCounter;
-				*/
+
 				if(enterFrameCounter % 22.5 == 0){
-					var s1:Shape1 = new Shape1();
 					s1.scaleX = s1.scaleY = 0.6;
 					this.addChild(s1);
-					s1.x = centerPoint.x ;
-					s1.y = centerPoint.y ;
-					s1.rotation = enterFrameCounter;
 				}
 				if(enterFrameCounter % 60 == 0){
-					var s1:Shape1 = new Shape1();
 					s1.scaleX = s1.scaleY = 0.8;
 					this.addChild(s1);
-					s1.x = centerPoint.x ;
-					s1.y = centerPoint.y ;
-					s1.rotation = enterFrameCounter;
 				}
-			} 
+				*/
+			//} 
 			//
 		//}
 		
 
 		//
-		this.enterFrameCounter ++;
+		//trace('enterFrameCounter=before='+enterFrameCounter);
+		//this.enterFrameCounter += 1;
+		//trace('enterFrameCounter=after='+enterFrameCounter);
 	}
 	
 	
