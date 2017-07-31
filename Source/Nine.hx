@@ -75,9 +75,9 @@ class NineApp extends Sprite {
 		
 		this.pFactory = new PatternFactory(this.dContainer,centerPoint);
 
-		//construct();
+		construct();
 		
-		addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
+		//addEventListener(Event.ENTER_FRAME,this_onEnterFrame);
 		this.stage.addEventListener(MouseEvent.CLICK,onStageClick);
 		
 	}
@@ -114,6 +114,10 @@ class NineApp extends Sprite {
 		s1.setPosition(centerPoint);
 		s1.rotation = 45;
 		*/
+
+		pFactory.drawPattern(this.dContainer);
+		var s:Sprite = pFactory.getPattern();
+		addChild(s);
 	}
 
 	private function onStageClick(e:MouseEvent):Void{
@@ -265,13 +269,18 @@ class NineApp extends Sprite {
 		var s1:Shape1 = new Shape1();
 		//var s1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//s1.scaleX = s1.scaleY = 0.6;
-		this.dContainer.addChild(s1);
+		//this.dContainer.addChild(s1);
 
 		//trace(enterFrameCounter+': deltaTime='+deltaTime);
 
-		s1.x = 30 * ( Math.sin( enterFrameCounter ) ) ;
-		s1.y = (-1) * 30 * ( Math.cos( enterFrameCounter ) ) ;
-		s1.rotation = enterFrameCounter;
+		if (enterFrameCounter % 90 == 0) {
+			this.dContainer.addChild(s1);
+			s1.x = 1 * ( Math.sin( enterFrameCounter ) ) ;
+			s1.y = (-1) * 1 * ( Math.cos( enterFrameCounter ) ) ;
+			s1.rotation = enterFrameCounter;
+		}
+
+		
 
 		//if (enterFrameCounter<=360) {
 			//if (enterFrameCounter % 10 == 0) {
