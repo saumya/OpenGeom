@@ -1,6 +1,10 @@
 Geometry and Maths
 ==================
 An OpenFL experiments with Geometry coding.
+
+OpenFL deals with Degrees and Radians both!
+ - rotation is Degrees
+ - sin(x) , x is in radians
  
 ```
 Point > Single Circle > Double Circle >
