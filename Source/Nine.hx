@@ -68,7 +68,7 @@ class NineApp extends Sprite {
 		var centerPoint = new Point(stage.stageWidth/2,stage.stageHeight/2);
 		
 		this.dContainer = new OGSprite();
-		this.dContainer.drawCenter();
+		//this.dContainer.drawCenter();
 		this.dContainer.x = centerPoint.x;
 		this.dContainer.y = centerPoint.y;
 		addChild(dContainer);
@@ -247,6 +247,7 @@ class NineApp extends Sprite {
 		}
 		*/
 		
+		/*
 		if (enterFrameCounter % 45 == 0) {
 			var s:Sprite = pFactory.getPetalPattern(6);
 			s.scaleX = s.scaleY = 0.75;
@@ -260,7 +261,8 @@ class NineApp extends Sprite {
 			s.rotation = enterFrameCounter;
 			dContainer.addChild(s);
 		}
-		
+		*/
+
 
 		/*
 		if(enterFrameCounter%2 == 0){
@@ -307,6 +309,23 @@ class NineApp extends Sprite {
 			s1.rotation = enterFrameCounter;
 		}
 		*/
+
+		xx = Math.cos(enterFrameCounter);
+		yy = Math.sin(enterFrameCounter);
+		xPos = enterFrameCounter * xx * (1/4) ;
+		yPos = enterFrameCounter * yy * (1/4) ;
+
+		var angle:Float = enterFrameCounter/2;
+		var cXX:Float = Math.cos(angle);
+		var cYY:Float = Math.sin(angle);
+		var cxPos:Float = enterFrameCounter * cXX * (1/8);
+		var cyPos:Float = enterFrameCounter * cYY * (1/8);
+
+
+		dContainer.graphics.lineStyle(1,0xFFFFFF);
+		//dContainer.graphics.lineTo(xPos,yPos);
+		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
+		dContainer.graphics.moveTo(xPos,yPos);
 
 		
 
