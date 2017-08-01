@@ -318,8 +318,8 @@ class NineApp extends Sprite {
 		var angle:Float = enterFrameCounter/2;
 		var cXX:Float = Math.cos(angle);
 		var cYY:Float = Math.sin(angle);
-		var cxPos:Float = enterFrameCounter * cXX * (1/8);
-		var cyPos:Float = enterFrameCounter * cYY * (1/8);
+		var cxPos:Float = angle * cXX * (1/4);
+		var cyPos:Float = angle * cYY * (1/4);
 
 
 		dContainer.graphics.lineStyle(1,0xFFFFFF);
