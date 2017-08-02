@@ -45,4 +45,38 @@ class PatternFactory {
 
 		return s;
 	}
+	// Generic Pattern
+	public function drawPattern1(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+
+		var r:Float = deltaTime;
+		var radius:Float = 10;
+		var xPos:Float = 0;
+		var yPos:Float = 0;
+		
+		var d = (10)*enterFrameCounter;
+		var e = 1 * enterFrameCounter;
+
+		
+		var xx:Float = 1;
+		var yy:Float = 1;
+
+		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+
+		xx = Math.cos(radianAngle);
+		yy = Math.sin(radianAngle);
+		xPos = radianAngle * xx * (1/100) ;
+		yPos = radianAngle * yy * (1/100) ;
+
+		var angle:Float = radianAngle/2;
+		var cXX:Float = Math.cos(angle);
+		var cYY:Float = Math.sin(angle);
+		var cxPos:Float = radianAngle * cXX * (1/1000);
+		var cyPos:Float = radianAngle * cYY * (1/1000);
+
+
+		dContainer.graphics.lineStyle(1,0xFFFFFF);
+		//dContainer.graphics.lineTo(xPos,yPos);
+		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
+		dContainer.graphics.moveTo(xPos,yPos);
+	}
 }

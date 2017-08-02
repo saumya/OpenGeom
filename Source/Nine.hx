@@ -226,18 +226,18 @@ class NineApp extends Sprite {
 		*/
 
 		//pattern : 10
+		/*
 		var r:Float = deltaTime;
 		var radius:Float = 10;
 		var xPos:Float = 0;
 		var yPos:Float = 0;
-
 		
 		var d = (10)*enterFrameCounter;
 		var e = 1 * enterFrameCounter;
 
-		
 		var xx:Float = 1;
 		var yy:Float = 1;
+		*/
 		/*
 		if (enterFrameCounter % 15 == 0) {
 			var s:Sprite = pFactory.getPetalPattern(2);
@@ -309,7 +309,7 @@ class NineApp extends Sprite {
 			s1.rotation = enterFrameCounter;
 		}
 		*/
-
+		/*
 		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 
 		xx = Math.cos(radianAngle);
@@ -328,8 +328,9 @@ class NineApp extends Sprite {
 		//dContainer.graphics.lineTo(xPos,yPos);
 		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
 		dContainer.graphics.moveTo(xPos,yPos);
+		*/
 
-		
+		pFactory.drawPattern1(dContainer,enterFrameCounter,deltaTime);
 
 		//if (enterFrameCounter<=360) {
 			//if (enterFrameCounter % 10 == 0) {
