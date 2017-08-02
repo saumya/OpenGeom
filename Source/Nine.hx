@@ -310,16 +310,18 @@ class NineApp extends Sprite {
 		}
 		*/
 
-		xx = Math.cos(enterFrameCounter);
-		yy = Math.sin(enterFrameCounter);
-		xPos = enterFrameCounter * xx * (1/4) ;
-		yPos = enterFrameCounter * yy * (1/4) ;
+		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 
-		var angle:Float = enterFrameCounter/2;
+		xx = Math.cos(radianAngle);
+		yy = Math.sin(radianAngle);
+		xPos = radianAngle * xx * (1/100) ;
+		yPos = radianAngle * yy * (1/100) ;
+
+		var angle:Float = radianAngle/2;
 		var cXX:Float = Math.cos(angle);
 		var cYY:Float = Math.sin(angle);
-		var cxPos:Float = angle * cXX * (1/4);
-		var cyPos:Float = angle * cYY * (1/4);
+		var cxPos:Float = radianAngle * cXX * (1/1000);
+		var cyPos:Float = radianAngle * cYY * (1/1000);
 
 
 		dContainer.graphics.lineStyle(1,0xFFFFFF);
