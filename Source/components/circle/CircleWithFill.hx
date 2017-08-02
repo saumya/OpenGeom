@@ -7,17 +7,19 @@ import openfl.display.Graphics;
 class CircleWithFill extends Sprite {
 
     private var radiusOfCircle:Float;
+    private var colorOfCircle:Int;
 	
-	public function new(radius:Float=100) {
+	public function new(radius:Float=100,cColor:Int=0xAAAAAA) {
 		super();
 		radiusOfCircle = radius;
+        colorOfCircle = cColor;
 		construct();
 	}
 	public function construct():Void{
         var gfx : Graphics = this.graphics;
         gfx.clear();
         //gfx.lineStyle( 2, 0xAAAAAA );
-        gfx.beginFill( 0xAAAAAA );
+        gfx.beginFill( colorOfCircle );
         //center align
         //gfx.drawCircle(radiusOfCircle/2,radiusOfCircle/2,radiusOfCircle);
         //left align

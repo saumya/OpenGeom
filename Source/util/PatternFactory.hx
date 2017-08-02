@@ -7,16 +7,22 @@ import openfl.display.Graphics;
 import openfl.geom.Point;
 
 import components.shape.Shape1;
+import components.circle.CircleWithFill;
 
 class PatternFactory {
 	
 	private var sBoard:Sprite;
 	private var pCenter:Point;
 
+	//draw
+	private var lastPoint:Point;
+
 	public function new(sCanvas:Sprite,center:Point) {
 		//pCenter = new Point(0,0);
 		sBoard = sCanvas;
 		pCenter = center;
+		//
+		lastPoint = new Point(0,0);
 	}
 	//must be called after drawPattern() else it will return a blank Sprite
 	public function getPattern():Sprite{
@@ -78,5 +84,57 @@ class PatternFactory {
 		//dContainer.graphics.lineTo(xPos,yPos);
 		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
 		dContainer.graphics.moveTo(xPos,yPos);
+	}
+	public function drawPattern2(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+
+		var r:Float = deltaTime;
+		//var radius:Float = 10;
+		var mi:Float = (1/100);
+		
+		var d = (10)*enterFrameCounter;
+		var e = 1 * enterFrameCounter;
+
+		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * mi * xx  ;
+		var yPos:Float = radianAngle * mi * yy  ;
+		
+		var halfAngle:Float = radianAngle/2;
+
+		var cXX:Float = Math.cos(halfAngle);
+		var cYY:Float = Math.sin(halfAngle);
+		var cxPos:Float = radianAngle * mi * xx * 3/4 ;
+		var cyPos:Float = radianAngle * mi * yy * 3/4 ;
+		
+		//cxPos = xPos*1.1;
+		//cyPos = yPos*1.1;
+		
+		/*
+		var cxPos:Float = ( xPos - lastPoint.x ) / 2 ;
+		var cyPos:Float = ( yPos - lastPoint.y ) / 2 ;
+		*/
+
+		/*
+		var c1:CircleWithFill = new CircleWithFill(1,0xFF0000);
+		dContainer.addChild(c1);
+		c1.x = xPos;
+		c1.y = yPos;
+
+		var c2:CircleWithFill = new CircleWithFill(2,0x00FF00);
+		dContainer.addChild(c2);
+		c2.x = cxPos;
+		c2.y = cyPos;
+		*/
+		
+		
+		dContainer.graphics.lineStyle(1,0xFFFFFF);
+		//dContainer.graphics.lineTo(xPos,yPos);
+		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
+		dContainer.graphics.moveTo(xPos,yPos);
+
+		lastPoint.x = xPos;
+		lastPoint.y = yPos;
 	}
 }
