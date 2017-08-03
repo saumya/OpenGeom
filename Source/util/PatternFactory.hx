@@ -137,4 +137,38 @@ class PatternFactory {
 		lastPoint.x = xPos;
 		lastPoint.y = yPos;
 	}
+
+	public function drawPattern3(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+		var r:Float = deltaTime;
+		//var radius:Float = 10;
+		var mi:Float = (1/100);
+		
+		var d = (10)*enterFrameCounter;
+		var e = 1 * enterFrameCounter;
+
+		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * mi * xx  ;
+		var yPos:Float = radianAngle * mi * yy  ;
+		
+		var halfAngle:Float = radianAngle/2;
+
+		var cXX:Float = Math.cos(halfAngle);
+		var cYY:Float = Math.sin(halfAngle);
+
+		var cxPos:Float = lastPoint.x + (lastPoint.x - xPos)/2 ;
+		var cyPos:Float = lastPoint.y + (lastPoint.y - yPos)/2 ;
+
+		dContainer.graphics.lineStyle(1,0xFFFFFF);
+		//dContainer.graphics.lineTo(xPos,yPos);
+		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
+		dContainer.graphics.moveTo(xPos,yPos);
+
+		lastPoint.x = xPos;
+		lastPoint.y = yPos;
+	}
+
+
 }
