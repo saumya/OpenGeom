@@ -141,30 +141,68 @@ class PatternFactory {
 	public function drawPattern3(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
 		var r:Float = deltaTime;
 		//var radius:Float = 10;
-		var mi:Float = (1/100);
+		var mi:Float = (1/1);
 		
 		var d = (10)*enterFrameCounter;
 		var e = 1 * enterFrameCounter;
 
-		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var dd:Float = 1;
+
+		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var radianAngle : Float = enterFrameCounter ;
 
 		var xx:Float = Math.cos(radianAngle);
 		var yy:Float = Math.sin(radianAngle);
-		var xPos:Float = radianAngle * mi * xx  ;
-		var yPos:Float = radianAngle * mi * yy  ;
+		var xPos:Float = radianAngle * xx * mi ;
+		var yPos:Float = radianAngle * yy * mi ;
 		
 		var halfAngle:Float = radianAngle/2;
 
 		var cXX:Float = Math.cos(halfAngle);
 		var cYY:Float = Math.sin(halfAngle);
+		var cxPos:Float = halfAngle * cXX * mi ;
+		var cyPos:Float = halfAngle * cYY * mi ;
 
-		var cxPos:Float = lastPoint.x + (lastPoint.x - xPos)/2 ;
-		var cyPos:Float = lastPoint.y + (lastPoint.y - yPos)/2 ;
+		trace('====== vvvvvvv ================');
+		trace('enterFrameCounter',enterFrameCounter);
+		trace('radianAngle',radianAngle,'halfAngle',halfAngle);
+		trace('cXX',cXX,'cYY',cYY);
+		trace('lastPoint.x',lastPoint.x,'lastPoint.y',lastPoint.y);
+		trace('xPos',xPos,'yPos',yPos);
+		trace('cxPos',cxPos,'cyPos',cyPos);
+		
+		/*
+		var c1:CircleWithFill = new CircleWithFill(2,0xFF0000);
+		dContainer.addChild(c1);
+		c1.x = xPos;
+		c1.y = yPos;
+		*/
+		/*
+		var c2:CircleWithFill = new CircleWithFill(1,0x00FF00);
+		dContainer.addChild(c2);
+		c2.x = cxPos;
+		c2.y = cyPos;
+		*/
+
+		trace('====== xxxxxx ================');
 
 		dContainer.graphics.lineStyle(1,0xFFFFFF);
 		//dContainer.graphics.lineTo(xPos,yPos);
-		dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
-		dContainer.graphics.moveTo(xPos,yPos);
+
+		if(lastPoint.x==0){
+			// Do Nothing
+			dContainer.graphics.moveTo(xPos,yPos);
+		}else{
+			dContainer.graphics.curveTo(cxPos,cyPos,xPos,yPos);
+			dContainer.graphics.moveTo(xPos,yPos);
+			/*
+			dContainer.graphics.lineTo(cxPos,cyPos);
+			dContainer.graphics.moveTo(cxPos,cyPos);
+			dContainer.graphics.lineTo(xPos,yPos);
+			dContainer.graphics.moveTo(xPos,yPos);
+			*/
+		}
+		
 
 		lastPoint.x = xPos;
 		lastPoint.y = yPos;
