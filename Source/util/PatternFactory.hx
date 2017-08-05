@@ -208,6 +208,9 @@ class PatternFactory {
 		lastPoint.y = yPos;
 	}
 
+	// Outside in
+	// This pattern once generated, displays the outside as a circle and inside
+	// there is the pattern.
 	public function drawPattern4(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
 		var r:Float = deltaTime;
 		//var radius:Float = 10;
