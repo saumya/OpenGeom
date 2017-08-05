@@ -221,17 +221,17 @@ class PatternFactory {
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var radianAngle : Float = enterFrameCounter ;
 
-		var xx:Float = Math.cos(radianAngle);
-		var yy:Float = Math.sin(radianAngle);
-		var xPos:Float = radianAngle * xx * mi ;
-		var yPos:Float = radianAngle * yy * mi ;
+		var xx:Float = Math.cos(enterFrameCounter);
+		var yy:Float = Math.sin(enterFrameCounter);
+		var xPos:Float = 200 * xx * mi ;
+		var yPos:Float = 200 * yy * mi ;
 		
 		var halfAngle:Float = radianAngle/2;
 
-		var cXX:Float = Math.cos(halfAngle);
-		var cYY:Float = Math.sin(halfAngle);
-		var cxPos:Float = halfAngle * cXX * mi ;
-		var cyPos:Float = halfAngle * cYY * mi ;
+		var cXX:Float = Math.cos(enterFrameCounter/4);
+		var cYY:Float = Math.sin(enterFrameCounter/4);
+		var cxPos:Float = 100 * cXX * mi ;
+		var cyPos:Float = 100 * cYY * mi ;
 
 		trace('====== vvvvvvv ================');
 		trace('enterFrameCounter',enterFrameCounter);
@@ -241,12 +241,12 @@ class PatternFactory {
 		trace('xPos',xPos,'yPos',yPos);
 		trace('cxPos',cxPos,'cyPos',cyPos);
 		
-		/*
-		var c1:CircleWithFill = new CircleWithFill(2,0xFF0000);
+		
+		var c1:CircleWithFill = new CircleWithFill(2,0xFFFFFF);
 		dContainer.addChild(c1);
 		c1.x = xPos;
 		c1.y = yPos;
-		*/
+		
 		/*
 		var c2:CircleWithFill = new CircleWithFill(1,0x00FF00);
 		dContainer.addChild(c2);
