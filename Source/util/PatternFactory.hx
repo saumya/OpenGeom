@@ -231,7 +231,7 @@ class PatternFactory {
 		
 		var halfAngle:Float = radianAngle/2;
 
-		var cXX:Float = Math.cos(enterFrameCounter/4);
+		var cXX:Float = Math.cos(enterFrameCounter/4); // 'divided by' is the key in pattern
 		var cYY:Float = Math.sin(enterFrameCounter/4);
 		var cxPos:Float = 100 * cXX * mi ;
 		var cyPos:Float = 100 * cYY * mi ;
@@ -276,6 +276,84 @@ class PatternFactory {
 			*/
 		}
 		
+
+		lastPoint.x = xPos;
+		lastPoint.y = yPos;
+	}
+
+	// Color Patterns
+	public function drawPattern5(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+		//var r:Float = deltaTime;
+		//var radius:Float = 10;
+		var mi:Float = (1/1); // Zoom Level
+		
+		//var d = (10)*enterFrameCounter;
+		//var e = 1 * enterFrameCounter;
+
+		//var dd:Float = 1;
+
+		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var radianAngle : Float = enterFrameCounter ;
+		//var cI:Int = 100000*enterFrameCounter; // color
+		var cI:Int = 10000*enterFrameCounter; // color
+
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * xx * mi ;
+		var yPos:Float = radianAngle * yy * mi ;
+		
+		var halfAngle:Float = radianAngle/2;
+
+		var cXX:Float = Math.cos(halfAngle);
+		var cYY:Float = Math.sin(halfAngle);
+		var cxPos:Float = radianAngle * cXX * mi ;
+		var cyPos:Float = radianAngle * cYY * mi ;
+
+		trace('====== vvvvvvv ================');
+		trace('enterFrameCounter',enterFrameCounter);
+		trace('radianAngle',radianAngle,'halfAngle',halfAngle);
+		trace('cXX',cXX,'cYY',cYY);
+		trace('lastPoint.x',lastPoint.x,'lastPoint.y',lastPoint.y);
+		trace('xPos',xPos,'yPos',yPos);
+		trace('cxPos',cxPos,'cyPos',cyPos);
+		
+		
+		//var c1:CircleWithFill = new CircleWithFill(2,enterFrameCounter);
+		var c1:CircleWithFill = new CircleWithFill(2,cI);
+		dContainer.addChild(c1);
+		c1.x = xPos;
+		c1.y = yPos;
+		
+		/*
+		var c2:CircleWithFill = new CircleWithFill(1,0x00FF00);
+		dContainer.addChild(c2);
+		c2.x = cxPos;
+		c2.y = cyPos;
+		*/
+
+		trace('====== xxxxxx ================');
+		
+		dContainer.graphics.lineStyle(1,cI);
+		//dContainer.graphics.lineStyle(1,0xFFFFFF);
+		
+		//dContainer.graphics.lineTo(xPos,yPos);
+
+		if(lastPoint.x==0){
+			// Do Nothing
+			dContainer.graphics.moveTo(xPos,yPos);
+		}else{
+			//dContainer.graphics.curveTo(xPos/6,yPos/6,xPos,yPos);
+			dContainer.graphics.curveTo(cxPos/6,cyPos/6,xPos,yPos);
+			dContainer.graphics.moveTo(xPos,yPos);
+			/*
+			dContainer.graphics.lineTo(cxPos,cyPos);
+			dContainer.graphics.moveTo(cxPos,cyPos);
+			dContainer.graphics.lineTo(xPos,yPos);
+			dContainer.graphics.moveTo(xPos,yPos);
+			*/
+		}
+		
+		//dContainer.scaleX = dContainer.scaleY -= (enterFrameCounter)*(1/1000000);
 
 		lastPoint.x = xPos;
 		lastPoint.y = yPos;
