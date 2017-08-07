@@ -8,6 +8,7 @@ import openfl.geom.Point;
 
 import components.shape.Shape1;
 import components.circle.CircleWithFill;
+import components.circle.CircleWithOnlyBorder;
 
 class PatternFactory {
 	
@@ -296,6 +297,7 @@ class PatternFactory {
 		var radianAngle : Float = enterFrameCounter ;
 		//var cI:Int = 100000*enterFrameCounter; // color
 		var cI:Int = 10000*enterFrameCounter; // color
+		var thickness:Float = (enterFrameCounter/200); //line thickness
 
 		var xx:Float = Math.cos(radianAngle);
 		var yy:Float = Math.sin(radianAngle);
@@ -319,7 +321,7 @@ class PatternFactory {
 		
 		
 		//var c1:CircleWithFill = new CircleWithFill(2,enterFrameCounter);
-		var c1:CircleWithFill = new CircleWithFill(2,cI);
+		var c1:CircleWithFill = new CircleWithFill(1,cI);
 		dContainer.addChild(c1);
 		c1.x = xPos;
 		c1.y = yPos;
@@ -332,8 +334,8 @@ class PatternFactory {
 		*/
 
 		trace('====== xxxxxx ================');
-		
-		dContainer.graphics.lineStyle(1,cI);
+		//
+		dContainer.graphics.lineStyle(thickness,cI);
 		//dContainer.graphics.lineStyle(1,0xFFFFFF);
 		
 		//dContainer.graphics.lineTo(xPos,yPos);
@@ -352,6 +354,86 @@ class PatternFactory {
 			dContainer.graphics.moveTo(xPos,yPos);
 			*/
 		}
+		
+		//dContainer.scaleX = dContainer.scaleY -= (enterFrameCounter)*(1/1000000);
+
+		lastPoint.x = xPos;
+		lastPoint.y = yPos;
+	}
+
+	//
+	public function drawPattern6(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+		//var r:Float = deltaTime;
+		//var radius:Float = 10;
+		var mi:Float = (1/1); // Zoom Level
+		
+		//var d = (10)*enterFrameCounter;
+		//var e = 1 * enterFrameCounter;
+
+		//var dd:Float = 1;
+
+		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var radianAngle : Float = enterFrameCounter ;
+		//var cI:Int = 100000*enterFrameCounter; // color
+		var cI:Int = 1000000*enterFrameCounter; // color
+		var thickness:Float = (enterFrameCounter/200); //line thickness
+
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * xx * mi ;
+		var yPos:Float = radianAngle * yy * mi ;
+		
+		var halfAngle:Float = radianAngle/2;
+
+		var cXX:Float = Math.cos(halfAngle);
+		var cYY:Float = Math.sin(halfAngle);
+		var cxPos:Float = radianAngle * cXX * mi ;
+		var cyPos:Float = radianAngle * cYY * mi ;
+
+		trace('====== vvvvvvv ================');
+		trace('enterFrameCounter',enterFrameCounter);
+		trace('radianAngle',radianAngle,'halfAngle',halfAngle);
+		trace('cXX',cXX,'cYY',cYY);
+		trace('lastPoint.x',lastPoint.x,'lastPoint.y',lastPoint.y);
+		trace('xPos',xPos,'yPos',yPos);
+		trace('cxPos',cxPos,'cyPos',cyPos);
+		
+		
+		//var c1:CircleWithFill = new CircleWithFill(2,enterFrameCounter);
+		//var c1:CircleWithFill = new CircleWithFill(10,cI);
+		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(100);
+		dContainer.addChild(c1);
+		c1.x = xPos;
+		c1.y = yPos;
+		
+		/*
+		var c2:CircleWithFill = new CircleWithFill(1,0x00FF00);
+		dContainer.addChild(c2);
+		c2.x = cxPos;
+		c2.y = cyPos;
+		*/
+
+		trace('====== xxxxxx ================');
+		//
+		dContainer.graphics.lineStyle(thickness,cI);
+		//dContainer.graphics.lineStyle(1,0xFFFFFF);
+		
+		//dContainer.graphics.lineTo(xPos,yPos);
+		/*
+		if(lastPoint.x==0){
+			// Do Nothing
+			dContainer.graphics.moveTo(xPos,yPos);
+		}else{
+			//dContainer.graphics.curveTo(cxPos/6,cyPos/6,xPos,yPos);
+			//dContainer.graphics.moveTo(xPos,yPos);
+			
+			dContainer.graphics.lineTo(cxPos,cyPos);
+			dContainer.graphics.moveTo(cxPos,cyPos);
+			dContainer.graphics.lineTo(xPos,yPos);
+			dContainer.graphics.moveTo(xPos,yPos);
+			
+		}
+		*/
 		
 		//dContainer.scaleX = dContainer.scaleY -= (enterFrameCounter)*(1/1000000);
 

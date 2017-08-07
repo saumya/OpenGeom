@@ -132,7 +132,8 @@ class NineApp extends Sprite {
 		sprite.x += speed * deltaTime;
 		*/
 
-		pFactory.drawPattern5(dContainer,enterFrameCounter,deltaTime);
+		//pFactory.drawPattern5(dContainer,enterFrameCounter,deltaTime);
+		pFactory.drawPattern6(dContainer,enterFrameCounter,deltaTime);
 
 		//circle3.y = circle1.y + circleRadius * Math.sin(speed * deltaTime);
 
