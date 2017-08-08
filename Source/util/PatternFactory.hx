@@ -406,12 +406,12 @@ class PatternFactory {
 		c1.x = xPos;
 		c1.y = yPos;
 		
-		/*
-		var c2:CircleWithFill = new CircleWithFill(1,0x00FF00);
+		
+		var c2:CircleWithFill = new CircleWithFill(2,0xFF0000);
 		dContainer.addChild(c2);
-		c2.x = cxPos;
-		c2.y = cyPos;
-		*/
+		c2.x = xPos;
+		c2.y = yPos;
+		
 
 		trace('====== xxxxxx ================');
 		//
