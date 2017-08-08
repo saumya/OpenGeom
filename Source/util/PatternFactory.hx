@@ -403,11 +403,12 @@ class PatternFactory {
 		//var c1:CircleWithFill = new CircleWithFill(10,cI);
 		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(100);
 		dContainer.addChild(c1);
+		c1.alpha = 0.4;
 		c1.x = xPos;
 		c1.y = yPos;
 		
 		
-		var c2:CircleWithFill = new CircleWithFill(2,0xFF0000);
+		var c2:CircleWithFill = new CircleWithFill(2,0xFFFFFF);
 		dContainer.addChild(c2);
 		c2.x = xPos;
 		c2.y = yPos;
