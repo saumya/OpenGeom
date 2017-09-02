@@ -15,7 +15,7 @@ Geometry and beginning. From point to circle and beyound.
 
 ![Geometry 1](https://github.com/saumya/OpenGeom/blob/master/Assets/1.png "Duality")
 
-
+There are a lot of patterns here and which is rendering is just one of them.
 
 
 
