@@ -464,7 +464,7 @@ class PatternFactory {
 		var cxPos:Float = radianAngle * cXX * mi ;
 		var cyPos:Float = radianAngle * cYY * mi ;
 		
-		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(100);
+		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(200);
 		dContainer.addChild(c1);
 		c1.alpha = 0.2;
 		c1.x = xPos;
