@@ -486,10 +486,10 @@ class PatternFactory {
 		
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var radianAngle : Float = enterFrameCounter ;
-		//var cI:Int = 100000*enterFrameCounter; // color
-		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
+		//var cI:Int = 1000*enterFrameCounter; // color
+		var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
 		
-		var thickness:Float = (enterFrameCounter/200); //line thickness
+		var thickness:Float = (enterFrameCounter/20000000); //line thickness
 
 		var xx:Float = Math.cos(radianAngle);
 		var yy:Float = Math.sin(radianAngle);
@@ -505,7 +505,8 @@ class PatternFactory {
 		
 		//
 		var g:Graphics = dContainer.graphics;
-		g.lineStyle(2,0xFF0000,thickness);
+		g.lineStyle(thickness, 0xFFFFFF, 1.0);
+
 		g.lineTo(xPos,yPos);
 		//
 
