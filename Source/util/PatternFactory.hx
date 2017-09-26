@@ -479,5 +479,53 @@ class PatternFactory {
 		lastPoint.y = yPos;
 	}
 
+	// RedRose
+	public function drawPattern8(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+		
+		var mi:Float = (1/1); // Zoom Level
+		
+		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var radianAngle : Float = enterFrameCounter ;
+		//var cI:Int = 100000*enterFrameCounter; // color
+		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
+		
+		var thickness:Float = (enterFrameCounter/200); //line thickness
+
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * xx * mi ;
+		var yPos:Float = radianAngle * yy * mi ;
+		
+		var halfAngle:Float = radianAngle/2;
+
+		var cXX:Float = Math.cos(halfAngle);
+		var cYY:Float = Math.sin(halfAngle);
+		var cxPos:Float = radianAngle * cXX * mi ;
+		var cyPos:Float = radianAngle * cYY * mi ;
+		
+		//
+		var g:Graphics = dContainer.graphics;
+		g.lineStyle(2,0xFF0000,thickness);
+		g.lineTo(xPos,yPos);
+		//
+
+		/*
+		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(200);
+		dContainer.addChild(c1);
+		c1.alpha = 0.2;
+		c1.x = xPos;
+		c1.y = yPos;
+		*/
+		/*
+		var c2:CircleWithFill = new CircleWithFill(2,cI*cI);
+		dContainer.addChild(c2);
+		c2.alpha = 0.6;
+		c2.x = xPos;
+		c2.y = yPos;
+		*/
+		lastPoint.x = xPos;
+		lastPoint.y = yPos;
+	}
+
 
 }
