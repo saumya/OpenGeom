@@ -11,7 +11,7 @@ Point > Single Circle > Double Circle >
 ```
  
 
-Geometry and beginning. From point to circle and beyound.
+From point to circle and beyound.
 
 ![Geometry 1](https://github.com/saumya/OpenGeom/blob/master/Assets/1.png "Duality")
 
