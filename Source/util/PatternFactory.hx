@@ -505,18 +505,22 @@ class PatternFactory {
 		
 		//
 		var g:Graphics = dContainer.graphics;
-		g.lineStyle(thickness, cI, 1.0);
+		g.lineStyle(thickness, 0xFFFFFF, 1.0);
 
 		g.lineTo(xPos,yPos);
+
+		//g.curveTo(cxPos,cyPos,xPos,yPos);
+		g.moveTo(xPos,yPos);
+
 		//
 
-		/*
+		
 		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(200);
 		dContainer.addChild(c1);
 		c1.alpha = 0.2;
 		c1.x = xPos;
 		c1.y = yPos;
-		*/
+		
 		/*
 		var c2:CircleWithFill = new CircleWithFill(2,cI*cI);
 		dContainer.addChild(c2);
