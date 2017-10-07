@@ -506,7 +506,7 @@ class PatternFactory {
 		//
 		var g:Graphics = dContainer.graphics;
 		//g.lineStyle(thickness, cI, 1.0);
-		g.lineStyle(0.2, 0xFFFFFF, 1.0);
+		g.lineStyle(0.3, 0xFFFFFF, 1.0);
 
 		g.lineTo(xPos,yPos);
 
@@ -523,10 +523,10 @@ class PatternFactory {
 		c1.y = yPos;
 		
 		
-		//var c2:CircleWithFill = new CircleWithFill(2,cI*cI);
-		var c2:CircleWithFill = new CircleWithFill(2,0xFFFFFF);
+		var c2:CircleWithFill = new CircleWithFill(2,cI*cI);
+		//var c2:CircleWithFill = new CircleWithFill(2,0xFFFFFF);
 		dContainer.addChild(c2);
-		c2.alpha = 0.4;
+		//c2.alpha = 0.4;
 		c2.x = xPos;
 		c2.y = yPos;
 		
