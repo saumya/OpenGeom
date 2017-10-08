@@ -506,7 +506,8 @@ class PatternFactory {
 		//
 		var g:Graphics = dContainer.graphics;
 		//g.lineStyle(thickness, cI, 1.0);
-		g.lineStyle(0.3, 0xFFFFFF, 1.0);
+		//g.lineStyle(0.3, 0xFFFFFF, 1.0);
+		g.lineStyle(0.4, cI*cI , 1.0);
 
 		g.lineTo(xPos,yPos);
 
