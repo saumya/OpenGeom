@@ -509,10 +509,10 @@ class PatternFactory {
 		//g.lineStyle(0.3, 0xFFFFFF, 1.0);
 		g.lineStyle(0.6, cI*cI , 4.0);
 
-		g.lineTo(xPos,yPos);
+		//g.lineTo(xPos,yPos);
 
-		//g.curveTo(cxPos,cyPos,xPos,yPos);
-		g.moveTo(xPos,yPos);
+		g.curveTo(cxPos,cyPos,cXX,cYY);
+		//g.moveTo(xPos,yPos);
 
 		//
 
