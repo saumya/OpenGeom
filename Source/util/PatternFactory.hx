@@ -517,8 +517,8 @@ class PatternFactory {
 		//
 
 		
-		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(200);
-		var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
+		var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(200);
+		//var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
 		dContainer.addChild(c1);
 		c1.alpha = 0.2;
 		c1.x = xPos;
