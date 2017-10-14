@@ -520,10 +520,11 @@ class PatternFactory {
 		
 		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
-		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF);
+		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF,0.2,1,0xAAAAAA,1.0);
+		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,cI,0.2,1,0xDDDDDD,0.4);
 		//var c1:Shape1 = new Shape1();
 		dContainer.addChild(c1);
-		c1.alpha = 0.4;
+		//c1.alpha = 0.4;
 		c1.x = xPos;
 		c1.y = yPos;
 		
