@@ -487,7 +487,7 @@ class PatternFactory {
 		
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var radianAngle : Float = enterFrameCounter ;
-		var cI:Int = 1000*enterFrameCounter; // color
+		var cI:Int = 10000*enterFrameCounter; // color
 		//var cI:Int = Math.round((256*256*1) * Math.sin(enterFrameCounter))  ; // color
 		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
 		
@@ -522,7 +522,7 @@ class PatternFactory {
 		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF,0.2,1,0xAAAAAA,1.0);
-		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(80,cI,0.2,1,0xDDDDDD,0.6);
+		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(40,cI,0.4,1,0xDDDDDD,0.2);
 		//var c1:Shape1 = new Shape1();
 		dContainer.addChild(c1);
 		//c1.alpha = 0.4;
