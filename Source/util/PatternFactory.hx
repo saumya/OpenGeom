@@ -487,7 +487,7 @@ class PatternFactory {
 		
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var radianAngle : Float = enterFrameCounter ;
-		var cI:Int = 100*enterFrameCounter; // color
+		var cI:Int = 256*256*1*enterFrameCounter; // color
 		//var cI:Int = Math.round((256*256*2) * Math.sin(enterFrameCounter))  ; // color
 		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
 		
