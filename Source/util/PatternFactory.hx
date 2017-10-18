@@ -4,6 +4,10 @@ package util;
 import openfl.display.Sprite;
 import openfl.display.Graphics;
 
+import openfl.filters.BitmapFilter;
+import openfl.filters.BitmapFilterQuality;
+import openfl.filters.BlurFilter;
+
 import openfl.geom.Point;
 
 import components.shape.Shape1;
@@ -25,6 +29,10 @@ class PatternFactory {
 		pCenter = center;
 		//
 		lastPoint = new Point(0,0);
+		//
+		
+		
+
 	}
 	//must be called after drawPattern() else it will return a blank Sprite
 	public function getPattern():Sprite{
@@ -487,7 +495,7 @@ class PatternFactory {
 		
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var radianAngle : Float = enterFrameCounter ;
-		var cI:Int = 256*2*1*enterFrameCounter; // color
+		var cI:Int = 256*200*3*enterFrameCounter; // color
 		//var cI:Int = Math.round((256*256*2) * Math.sin(enterFrameCounter))  ; // color
 		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
 		
@@ -518,16 +526,35 @@ class PatternFactory {
 
 		//
 
+		var cRadius:Float = 40;
+		//var cRadius:Float = 20+20*(Math.sin(enterFrameCounter));
+
 		
 		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF,0.2,1,0xAAAAAA,1.0);
-		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(40,cI,0.4,1,0xDDDDDD,0.2);
+		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(cRadius,cI,0.4,1,cI,0.2);
 		//var c1:Shape1 = new Shape1();
 		dContainer.addChild(c1);
 		//c1.alpha = 0.4;
 		c1.x = xPos;
 		c1.y = yPos;
+		
+		/*
+		// filter
+		//var blurX:Float = 5 * Math.sin(enterFrameCounter);
+        //var blurY:Float = 5 * Math.sin(enterFrameCounter);
+        var blurX:Float = 20;
+        var blurY:Float = 20;
+		var filter:BitmapFilter = new BlurFilter(blurX, blurY, BitmapFilterQuality.HIGH);
+		var myFilters:Array<BitmapFilter> = new Array();
+		myFilters.push(filter);
+		//c1.filters = myFilters;
+		if(enterFrameCounter>100){
+			c1.filters = myFilters;
+		}
+		*/
+		
 		
 		/*
 		//var c2:CircleWithFill = new CircleWithFill(2,cI*cI);
