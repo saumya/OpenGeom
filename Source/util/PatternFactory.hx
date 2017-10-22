@@ -494,8 +494,31 @@ class PatternFactory {
 		var mi:Float = (1/1); // Zoom Level
 		
 		//var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
-		var radianAngle : Float = enterFrameCounter ;
-		var cI:Int = 256*256*1*enterFrameCounter; // color
+		var radianAngle : Float = enterFrameCounter;
+
+		var cRadius:Float = 200;
+		var cI:Int = 1*1*1*enterFrameCounter; // color
+		var aFill:Float = 0.1;
+
+		if(enterFrameCounter>=200){
+			cI = 256*1*1*enterFrameCounter;
+			cRadius = 100;
+			aFill = 0.2;
+			if(enterFrameCounter>=250){
+				cI = 256*256*1*enterFrameCounter;
+				cRadius = 50;
+				aFill = 0.3;
+				/*
+				if(enterFrameCounter>=200){
+					cI = 256*256*256*enterFrameCounter;
+					cRadius = 25;
+					aFill = 0.4;
+				}*/
+			}
+		}
+
+
+		//var cI:Int = 1*1*1*enterFrameCounter; // color
 		//var cI:Int = Math.round((256*256*2) * Math.sin(enterFrameCounter))  ; // color
 		//var cI:Int = Math.round((256*256*256) * Math.sin(enterFrameCounter))  ; // color
 		
@@ -526,7 +549,7 @@ class PatternFactory {
 
 		//
 
-		var cRadius:Float = 200;
+		//var cRadius:Float = 200;
 		//var cRadius:Float = 20+20*(Math.sin(enterFrameCounter));
 		
 		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
@@ -534,7 +557,7 @@ class PatternFactory {
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF,0.2,1,0xAAAAAA,1.0);
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(cRadius,cI,0.2,1,cI,0.4);
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(cRadius,cI,0.2,1,0xEEEEEE,0.4);
-		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(cRadius,cI,0.1,1,0xEEEEEE,0.4);
+		var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(cRadius,cI,aFill,1,0xEEEEEE,0.4);
 		//var c1:Shape1 = new Shape1();
 		dContainer.addChild(c1);
 		//c1.alpha = 0.4;
