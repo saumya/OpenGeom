@@ -500,20 +500,14 @@ class PatternFactory {
 		var cI:Int = 1*1*1*enterFrameCounter; // color
 		var aFill:Float = 0.1;
 
-		if(enterFrameCounter>=200){
-			cI = 256*1*1*enterFrameCounter;
+		if(enterFrameCounter>=100){
+			cI = 256*3*1*enterFrameCounter;
 			cRadius = 100;
-			aFill = 0.2;
-			if(enterFrameCounter>=250){
-				cI = 256*256*1*enterFrameCounter;
+			aFill = 0.0;
+			if(enterFrameCounter>=300){
+				cI = 256*256*255*enterFrameCounter;
 				cRadius = 50;
-				aFill = 0.3;
-				/*
-				if(enterFrameCounter>=200){
-					cI = 256*256*256*enterFrameCounter;
-					cRadius = 25;
-					aFill = 0.4;
-				}*/
+				aFill = 0.1;
 			}
 		}
 
