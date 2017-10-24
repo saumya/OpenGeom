@@ -7,6 +7,8 @@ import openfl.display.Graphics;
 
 import openfl.geom.Point;
 
+
+// Petal shape
 class Shape1 extends Sprite {
 	public function new() {
 		super();
