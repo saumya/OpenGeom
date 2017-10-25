@@ -534,7 +534,7 @@ class PatternFactory {
 		var g:Graphics = dContainer.graphics;
 		//g.lineStyle(thickness, cI, 1.0);
 		//g.lineStyle(0.3, 0xFFFFFF, 1.0);
-		g.lineStyle(0.6, 0xFF0000, 1.0);
+		//g.lineStyle(1.0, 0xFF0000, 4.0);
 		//g.lineStyle(0.6, cI*cI , 4.0);
 
 		g.lineTo(xPos,yPos);
@@ -546,7 +546,7 @@ class PatternFactory {
 
 		//var cRadius:Float = 200;
 		//var cRadius:Float = 20+20*(Math.sin(enterFrameCounter));
-		/*
+		
 		//var c1:CircleWithOnlyBorder = new CircleWithOnlyBorder(40);
 		//var c1:CircleWithFill = new CircleWithFill(200,cI*cI);
 		//var c1:CircleWithFillAndBorder = new CircleWithFillAndBorder(100,0xFFFFFF,0.2,1,0xAAAAAA,1.0);
@@ -558,7 +558,7 @@ class PatternFactory {
 		//c1.alpha = 0.4;
 		c1.x = xPos;
 		c1.y = yPos;
-		*/
+		
 		
 		/*
 		// filter
