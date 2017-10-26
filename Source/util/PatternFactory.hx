@@ -501,11 +501,12 @@ class PatternFactory {
 		var aFill:Float = 0.1;
 
 		if(enterFrameCounter>=100){
-			cI = 256*3*1*enterFrameCounter;
+			//cI = 256*3*1*enterFrameCounter;
+			cI = 0xFF00FF;
 			cRadius = 100;
-			aFill = 0.0;
+			aFill = 0.1;
 			if(enterFrameCounter>=300){
-				cI = 256*256*255*enterFrameCounter;
+				cI = 256*250*1*enterFrameCounter;
 				cRadius = 50;
 				aFill = 0.1;
 			}
