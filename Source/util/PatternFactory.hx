@@ -533,7 +533,7 @@ class PatternFactory {
 		
 		//
 		var g:Graphics = dContainer.graphics;
-		//g.lineStyle(thickness, cI, 1.0);
+		g.lineStyle(thickness, cI, 1.0);
 		//g.lineStyle(0.3, 0xFFFFFF, 1.0);
 		//g.lineStyle(1.0, 0xFF0000, 4.0);
 		//g.lineStyle(0.6, cI*cI , 4.0);
@@ -541,10 +541,10 @@ class PatternFactory {
 		g.lineTo(xPos,yPos);
 
 		//g.curveTo(cxPos,cyPos,cXX,cYY);
-		//g.moveTo(xPos,yPos);
+		g.moveTo(xPos,yPos);
 
 		//
-
+		/*
 		//var cRadius:Float = 200;
 		//var cRadius:Float = 20+20*(Math.sin(enterFrameCounter));
 		
@@ -559,7 +559,7 @@ class PatternFactory {
 		//c1.alpha = 0.4;
 		c1.x = xPos;
 		c1.y = yPos;
-		
+		*/
 		
 		/*
 		// filter
