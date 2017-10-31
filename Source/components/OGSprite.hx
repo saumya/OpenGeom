@@ -20,6 +20,12 @@ class OGSprite extends Sprite {
 		lineAlpha = 1.0;
 	}
 
+	public function move(newX:Float,newY:Float):Void{
+		this.x = newX;
+		this.y = newY;
+		//TODO: Animate this move
+	}
+
 	public function drawCenter():Void{
 		var g:Graphics = this.graphics;
 		g.clear();

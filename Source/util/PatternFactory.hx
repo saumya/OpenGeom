@@ -598,15 +598,14 @@ class PatternFactory {
 		var ogS1:OGSprite = new OGSprite();
 		dContainer.addChild(ogS1);
 
-		var mi:Float = (1/1); // Zoom Level
+		var mi:Float = (1/100); // Zoom Level
 		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var xx:Float = Math.cos(radianAngle);
 		var yy:Float = Math.sin(radianAngle);
 		var xPos:Float = radianAngle * xx * mi ;
 		var yPos:Float = radianAngle * yy * mi ;
 
-		ogS1.x = xPos;
-		ogS1.x = yPos;
+		ogS1.move(xPos,yPos);
 		ogS1.drawCenter();
 	}
 
