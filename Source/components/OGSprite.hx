@@ -10,18 +10,20 @@ class OGSprite extends Sprite {
 	private var halfLength:Float;
 	private var lineThickness:Float;
 	private var lineColor:UInt;
+	private var lineAlpha:Float;
 
 	public function new() {
 		super();
 		halfLength = 10;
 		lineThickness = 0.5;
 		lineColor = 0xFFFFFF;
+		lineAlpha = 1.0;
 	}
 
 	public function drawCenter():Void{
 		var g:Graphics = this.graphics;
 		g.clear();
-		g.lineStyle(lineThickness,lineColor,1.0);
+		g.lineStyle(lineThickness,lineColor, lineAlpha);
 		g.lineTo(halfLength,0);
 		g.moveTo(0,0);
 		g.lineTo(-1*halfLength,0);
