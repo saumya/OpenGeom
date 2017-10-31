@@ -15,6 +15,8 @@ import components.circle.CircleWithFill;
 import components.circle.CircleWithOnlyBorder;
 import components.circle.CircleWithFillAndBorder;
 
+import components.OGSprite;
+
 class PatternFactory {
 	
 	private var sBoard:Sprite;
@@ -588,6 +590,24 @@ class PatternFactory {
 		
 		lastPoint.x = xPos;
 		lastPoint.y = yPos;
+	}
+
+	// OpenGeom Lib utilisation
+	public function drawPattern9(dContainer:Sprite,enterFrameCounter:Int,deltaTime:Int):Void{
+		//var g:Graphics = dContainer.graphics;
+		var ogS1:OGSprite = new OGSprite();
+		dContainer.addChild(ogS1);
+
+		var mi:Float = (1/1); // Zoom Level
+		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
+		var xx:Float = Math.cos(radianAngle);
+		var yy:Float = Math.sin(radianAngle);
+		var xPos:Float = radianAngle * xx * mi ;
+		var yPos:Float = radianAngle * yy * mi ;
+
+		ogS1.x = xPos;
+		ogS1.x = yPos;
+		ogS1.drawCenter();
 	}
 
 

@@ -8,16 +8,20 @@ import openfl.display.Graphics;
 class OGSprite extends Sprite {
 
 	private var halfLength:Float;
+	private var lineThickness:Float;
+	private var lineColor:UInt;
 
 	public function new() {
 		super();
-		halfLength = 100;
+		halfLength = 10;
+		lineThickness = 0.5;
+		lineColor = 0xFFFFFF;
 	}
 
 	public function drawCenter():Void{
 		var g:Graphics = this.graphics;
 		g.clear();
-		g.lineStyle(1,0xFFFFFF);
+		g.lineStyle(lineThickness,lineColor,1.0);
 		g.lineTo(halfLength,0);
 		g.moveTo(0,0);
 		g.lineTo(-1*halfLength,0);
