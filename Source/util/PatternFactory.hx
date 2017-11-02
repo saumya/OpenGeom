@@ -25,8 +25,13 @@ class PatternFactory {
 
 	//draw
 	private var lastPoint:Point;
+	//
+	private var oPool:OGObjPool;
 
 	public function new(sCanvas:Sprite,center:Point) {
+		//
+		this.oPool = new OGObjPool();
+		//
 		//pCenter = new Point(0,0);
 		sBoard = sCanvas;
 		pCenter = center;
@@ -598,6 +603,9 @@ class PatternFactory {
 		//var g:Graphics = dContainer.graphics;
 		var ogS1:OGSprite = new OGSprite();
 		dContainer.addChild(ogS1);
+		//
+		this.oPool.addToPool(ogS1);
+		//
 
 		var mi:Float = (1/100); // Zoom Level
 		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
