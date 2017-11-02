@@ -5,9 +5,20 @@
  *
  **/
 
+package util;
+
+import components.OGSprite;
 
 class OGObjPool {
+	
+	private var aObj:Array<OGSprite>;
+
 	public function new() {
-		
+		aObj = new Array();
 	}
+
+	public function addToPool(newSprite:OGSprite){
+		this.aObj.push(newSprite);
+	}
+	
 }

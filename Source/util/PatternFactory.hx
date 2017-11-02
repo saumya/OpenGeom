@@ -16,6 +16,7 @@ import components.circle.CircleWithOnlyBorder;
 import components.circle.CircleWithFillAndBorder;
 
 import components.OGSprite;
+import util.OGObjPool;
 
 class PatternFactory {
 	
