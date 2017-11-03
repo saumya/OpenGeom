@@ -17,11 +17,12 @@ class OGObjPool {
 		aObj = new Array();
 	}
 
-	public function addToPool(newSprite:OGSprite){
+	public function addObjToPool(newSprite:OGSprite):Array<OGSprite> {
 		this.aObj.push(newSprite);
+		return aObj;
 	}
 
-	public function getAnObj():OGSprite{
+	public function getObjFromPool():OGSprite{
 		var a:OGSprite = aObj.pop();
 		return a;
 	}

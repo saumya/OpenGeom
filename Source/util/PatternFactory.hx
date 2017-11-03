@@ -604,7 +604,7 @@ class PatternFactory {
 		var ogS1:OGSprite = new OGSprite();
 		dContainer.addChild(ogS1);
 		//
-		this.oPool.addToPool(ogS1);
+		this.oPool.addObjToPool(ogS1);
 		//
 
 		var mi:Float = (1/100); // Zoom Level
