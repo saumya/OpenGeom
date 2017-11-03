@@ -20,5 +20,10 @@ class OGObjPool {
 	public function addToPool(newSprite:OGSprite){
 		this.aObj.push(newSprite);
 	}
-	
+
+	public function getAnObj():OGSprite{
+		var a:OGSprite = aObj.pop();
+		return a;
+	}
+
 }
