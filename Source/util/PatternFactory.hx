@@ -607,7 +607,7 @@ class PatternFactory {
 		this.oPool.addObjToPool(ogS1);
 		//
 
-		var mi:Float = (1/100); // Zoom Level
+		var mi:Float = (1/1000); // Zoom Level
 		var radianAngle : Float = enterFrameCounter * (180/Math.PI) ;
 		var xx:Float = Math.cos(radianAngle);
 		var yy:Float = Math.sin(radianAngle);
